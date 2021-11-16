@@ -1,0 +1,30 @@
+<h2 id="headline">Proof of Concept for Blender stuff</h2>
+<div class="ui compact menu" id="header_content">
+  <div class="ui simple dropdown item">
+    Content
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <div class="item"><a href="#toc_blender">Blender stuff</a></div>
+    </div>
+  </div>
+</div>
+
+<div id="start_content">
+  <h3 id="toc_blender">Blender stuff</h3>
+  <p class="blender_style">Here ist some custom text using custom style</p>
+  <div class="vdiv">
+    <app-basic-video-component videoname="demo.mp4"></app-basic-video-component>
+  </div>
+
+  <div class="vdiv">
+    <app-xml-video-component videoname="demo.mp4"></app-xml-video-component>
+  </div>
+
+  <div class="quiz">
+    <app-quiz-component question="This is a question? (correct answer 1)" correctAnswer="1" [answers]="['1','antwort nummero dos','3']" qId="ID1"></app-quiz-component>
+  </div>
+
+  <div class="quiz">
+    <app-quiz-component question="Another question? (correctAnswer yes)" correctAnswer="yes" [answers]="['1','antwort nummero dos','yes']" qId="ID2"></app-quiz-component>
+  </div>
+</div>
