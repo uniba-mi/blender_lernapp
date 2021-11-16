@@ -1,4 +1,4 @@
-name: Build and Release Angular-Lernapp
+name: Build and Release Blender-Lernapp
 
 on:
   push:
@@ -30,13 +30,13 @@ jobs:
     - name: Deploy with gh-pages
       run: |
         git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        npx gh-pages -d dist/Angular-Lernapp/ -u "github-actions-bot <support+actions@github.com>"
+        npx gh-pages -d dist/Blender-Lernapp/ -u "github-actions-bot <support+actions@github.com>"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Create release zip
       run: |
-        zip -r release.zip dist/Angular-Lernapp/
+        zip -r release.zip dist/Blnder-Lernapp/
 
     - name: Release zip
       uses: marvinpinto/action-automatic-releases@latest
