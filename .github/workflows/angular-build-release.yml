@@ -36,7 +36,7 @@ jobs:
 
     - name: Create release zip
       run: |
-        zip -r release.zip dist/Blnder-Lernapp/
+        zip -r release.zip dist/Blender-Lernapp/
 
     - name: Release zip
       uses: marvinpinto/action-automatic-releases@latest
