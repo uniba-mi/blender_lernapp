@@ -1,0 +1,56 @@
+<div id="start_content">
+    <h3 id="ae1">The Basics</h3>
+    <p>In this theory chapter we will briefly talk about the theory of curves to get a basic understanding on what they are, how they 
+        could be created in Blender in specific and what they can be used for. There are two types of Curves available in Blender that 
+        can also be found in any other 3D modelling tool, namely Bezier curves and Nurbs which are both heavily used for CGI and CAD 
+        applications.
+    </p>
+    <h3 id=ae1>Bezier Curves</h3>
+    <figure class="center">
+        <img src="../../assets/images/bezier_curve.png" alt="Bezier curve">
+        <figcaption>
+            Image of a Bezier curve
+            <a href="https://www.pythoninformer.com/python-libraries/pycairo/bezier-curves/" target="_blank">
+                (source)
+            </a>
+        </figcaption>
+    </figure>
+    <p>The image above displays a very simple Bezier Curve. As you can see the curve consists of 2 endpoints. In addition there 
+        can be multiple control points between them which are used to determine the overall shape of the curve. For each of those points 
+        there are handles that are used for editing the curve. I will not go into the mathematical details here. In case you are 
+        interested please take a look <a href=" https://mathworld.wolfram.com/BezierCurve.html" target="_blank">
+        here</a>.
+    </p>
+    <h3>NURBS(Non-Uniform Rational B-Splines)</h3>
+    <figure class="center">
+        <img src="../../assets/images/NURBS.png" alt="NURBS">
+        <figcaption>
+            NURBS
+            <a href="https://en.wikipedia.org/wiki/Non-uniform_rational_B-spline" target="_blank">
+                (source)
+            </a>
+        </figcaption>
+    </figure>
+    <p>
+        On the first sight they look pretty similar. In fact NURBS curves can be seen as a generalisation of Bezier curves. 
+        They are especially good for the creation of organic models since they can be used for surfaces. The shape of these curves 
+        is determined by multiple control vertices to which the curve is pulled. By for example extruding one curve along another, 
+        surfaces can be created which then at render time will be converted into polygons. Their points are therefore determined by 
+        the weighted sum of control points.
+    </p>
+    <h3>Blender specific</h3>
+    <div class="vdiv">
+        <app-basic-video-component videoname="blender_curves.mp4"></app-basic-video-component>
+    </div>
+    <h3 id="toc_further_references">Further references</h3>
+    <div class="ui warning message">
+        <ul>
+          <li><a href="https://docs.blender.org/manual/en/latest/modeling/curves/index.html" target="_blank">Documentation</a></li>
+          <li><a href="https://www.3dbiology.com/nurbs-vs-bezier-whats-the-difference/" target="_blank">Difference NURBS and Bezier</a></li>
+          <li><a href="https://mathworld.wolfram.com/BezierCurve.html" target="_blank">Bezier mathematical</a></li>
+          <li><a href="https://www.rgb-labs.com/blender-218-curves-in-blender-1-2/" target="_blank">Curves (german)</a></li>
+          <li><a href="https://www.rgb-labs.com/blender-162-bezier-nurbs-curves-pfade/" target="_blank">Handle types (german)</a></li>
+        </ul>
+    </div>
+</div>
+

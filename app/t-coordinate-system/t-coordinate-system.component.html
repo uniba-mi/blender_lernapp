@@ -1,0 +1,58 @@
+<div id="start_content">
+    <p>This is our first theory chapter in which I will explain the key difference between global and local coordinates and why they matter 
+        when working with Blender.
+    </p>
+    <h3 id="ae1">The Theory</h3>
+    <p>Take a look at the following image:</p>
+    <figure class="center">
+        <img src="../../assets/images/global_and_local_coords.gif" alt="Global and local coordinates">
+        <figcaption>
+            Global vs. local coordinates
+            <a href="https://docs.bentley.com/LiveContent/web/STAAD.Pro%20Help-v7/en/GUID-939CA8EE-F497-491D-93D9-DE0D750503B7.html" target="_blank">
+                (source)
+            </a>
+        </figcaption>
+    </figure>
+    <p>
+        What you can see on the image above are several coordinate systems. There is one big central coordinate system with the y-axis facing
+        the upwards direction. This from now on will be refered to as our <strong>global</strong> coordinate system. No matter what happens, 
+        the different axes will always stay in this exact same spot.
+    </p>
+    <p>
+        Now think of all those other smaller coordinate systems you see here as all the objects you add to your scene in Blender. All those
+        objects are placed in Blender's global coordinate system, just at different positions. No matter how you scale or rotate a object, its
+        position will always stay the same. In addition each of these objects also has a <strong>local</strong> coordinate system. As you can 
+        see in the image, all those small coordinate systems are somehow rotated versions of the big coordinate system. No matter how you rotate
+        those, their position in the global coordinate system will always stay the same.
+    </p>
+    <h3>A Blender example</h3>
+    <p>
+        The following Blender example will clarify what this means in our 3D viewport. Look at the first picture that displays a cylinder
+        that was just added without any rotation:
+    </p>
+    <figure class="center">
+        <img src="../../assets/images/local-coords-unrotated.PNG" alt="unrotated cylinder">
+        <figcaption>
+            Unrotated cylinder
+        </figcaption>
+    </figure>
+    <p>
+        As you can see the global coordinate system of Blender (the red, green and blue line running out of the image) and the local
+        coordinate system displayed by those small colored arrows face in the exact same direction. If we now rotate the cylinder by
+        90 degree we get the following result:
+    </p>
+    <figure class="center">
+        <img src="../../assets/images/local-coords-rotated.PNG" alt="rotated cylinder">
+        <figcaption>
+            Rotated cylinder
+        </figcaption>
+    </figure>
+    <p>
+        As you can see the local z-axis is now facing where the global y-axis of Blender is facing. The local z-axis of the cylinder
+        is still facing along the "top" of the object. Now just to make sure you understood the basics answer this small question:
+    </p>
+    <div class="quiz">
+        <app-quiz-component question="If we rotate an object, what coordinate system changes?" correctAnswer="Only the local coordinate system" [answers]="['Only the global coordinate system','Only the local coordinate system','Both the global and the local coordinate system']" qId="ID1"></app-quiz-component>
+    </div>
+</div>
+
