@@ -1,0 +1,4 @@
+<button type="button" class="collapsible" (click)=toggle()></button>
+<div class="collapsible-content" [ngClass]="{'hidden': isHidden}">
+    <ng-content></ng-content>
+</div> 

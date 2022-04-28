@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './welcome/welcome.component';
-import { PocComponent } from './poc/poc.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { RequiredToolsComponent } from './setup-required-tools/setup-required-tools.component';
 import { AboutElearningComponent } from './setup-about-elearning/setup-about-elearning.component';
@@ -25,9 +24,8 @@ import { TheoryRiggingComponent } from "./theory-rigging/theory-rigging.componen
 import { ConclusionComponent } from "./conclusion/conclusion.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'poc', component: PocComponent},
+  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: 'welcome', component: WelcomeComponent },
   { path: 'about', component: AboutComponent},
   { path: 'required-tools', component: RequiredToolsComponent},
   { path: 'about-elearning', component: AboutElearningComponent},

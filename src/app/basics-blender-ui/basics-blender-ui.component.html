@@ -1,5 +1,5 @@
+<h2 id="headline">UI overview</h2>
 <div id="start_content">
-    <h3 id="toc_blender">UI overview</h3>
     <div class="ui info message">
       <h5>In this section you will learn:</h5>
       <ul>
@@ -16,8 +16,109 @@
       </ul>
     </div>
     <div class="vdiv">
-      <!-- TODO: Change the video -->
-      <app-basic-video-component videoname="UI_overview.mp4"></app-basic-video-component>
+      <app-basic-video-component videoname="Video_1_UI.mp4"></app-basic-video-component>
+    </div>
+    <div class="collapsible-component">
+      <app-collapse-component message="I want to read" qId="ID1">
+        <p>
+          Welcome to the Blender learn environment. Blender is a very interactive 3D Modelling software. So please follow along to the tutorials actively. 
+          This will help you to remember the tools and their shortcuts. We will be working with the Blender version 2.93. 
+          When you first open up Blender you will be greeted with a dialog like this. You can choose a few options for the quick setup. 
+          The default language which we will be using is english. Than you can decide on the version of shortcuts you want to use. 
+          We go with the default one here too. The next option is just about wether you want to use the left or right mouse button to select things. 
+          And the one after that is what the space bar should activate. In the current setting when you press space bar, you will play the animation. 
+          And the last thing you can choose is the theme. We go with the dark theme here. Then just save the settings. We will go to the dault starting window.
+        </p>
+        <p>
+          On the default starting window you have several options again. You can either create a new file, use the resources labelled as getting started 
+          or open a blender file directly if you have one. We will now create a new general file.
+        </p>
+        <p>
+          When you create a new file in Blender, a default scene will be created with it. This scene will include a camera, a cube and a light. 
+        </p>
+        <p>
+          The starting configuration is the „Layout workspace“. In there you can see four predefined regions or areas: 
+          The 3D viewport is the main screen where you can see the scene and directly interact with it. Then there is the hierarchy or structure 
+          region in which all the objects in the scene are displayed in kind of a tree structure. You can organize objects in there as groups as a 
+          parts of packages. The area under that is the properties panel. In there you can find all of the information you may need about an object or 
+          specific settings. For example can you check out and modify the object properties like the transformations: location, rotation and scale. 
+          You can also see the materials used within this specific object and create new ones. The last region is the one under the 3D viewer, the animation panel. 
+          Here you can play an animation that you have created. Since we didn't define anything yet, we are per default on the first frame.
+        </p>
+        <p>
+          If you want to focus on one particular region than you may press <strong>CTRL + Space Bar</strong> for a fullscreen window and the same again to leave it. 
+          As you see I have installed a screencast plugin for you to see which buttons I am currently pressing. This should help you to remember 
+          the shortcuts we will learn over the course of the tutorials.
+        </p>
+        <p>
+          Another way of manipulating an object besides the properties pannel would be to press the <strong>N key</strong>. This will show the sidebar here in which 
+          you find additional options for example the Tool, Item or View panel. You may also just click here to open the panels. In the Item panel 
+          you may also inspect and manipulate some object properties. As you can see already there a often several ways to achieve the same thing in Blender.
+        </p>
+        <p>
+          To finish the overview of the menus: In this corner you will find the main menu in which you have the basic functionalities of saving, importing 
+          and exporting files, adjust preferences and undo the past. Specific to Blender of course the Render options and a few options about workspaces. 
+          We will talk about them and what they are shortly.
+        </p>
+        <p>
+          We are currently in the „Object Mode“ within the 3D viewer, in the next tutorial we will also see the Edit Mode which does give you other options to 
+          manipulate an object. The menu in this mode will also give you some more options. We are mostly interested in the „Add“ and „Object“ category. 
+          With „Add“ you may add new objects to the scene e.g. 3D objects like cubes, spheres and cylinders. Also 2D objects like planes and circles. 
+          You may also add curves like e.g. Bezier curves to the scene. The „Object“ category summarises again a lot of the feature we may use to manipulate an 
+          object in the scene. For most of the things we will probably use shortcuts. A very convenient thing in Blender is that if you hover over an tool or 
+          option there will be an explanation of what that tool or option does.
+        </p>
+        <p>
+          The last menu to know here is the menu on the right. These are all about what will be shown within the scene. The two options here are about the Gizmos 
+          and Overlays in the scene and can be deactivated or refined in what they shall show right now. The X-Ray option will be very important for us later when 
+          we talk about the Edit Mode because you can see through the objects with it. The options after that are about Shading and will be discussed detailed later. 
+          An important overlay is the coordinate system displayed here. With this you can always see the global coordinate system relative to you and thereby 
+          helps you to orientate.
+        </p>
+        <p>
+          To move within the scene you have to use the mouse. Scroll with the mouse wheel to zoom within the scene. Press the mouse wheel to rotate around a 
+          point in the scene. Press <strong>Shift + mouse wheel</strong> to move around in the scene. You may also use the arrows on the numpad on the right side of your keyboard 
+          to move small steps within the scene in each direction. When you want to focus again on a specific object, select the object with you left mouse and press 
+          the commata on the numpad. When you select an object you will also see that it will be selected within the hierarchy area.
+        </p>
+        <p>
+          We talked about work spaces before. The „layout“ space we see currently is on of several workspaces that are predefined. You may also find the 
+          workspaces Modeling, Sculpting and so on. The interesting thing to note, is that it does not matter which workspace you are in. Actually you can even create your 
+          own workspace with your very own regions. To demonstrate this we will create a new workspace here from the default „Layout“ workspace and customize it as 
+          we want. You may create new regions by clicking in the corner and dragging your mouse in one direction. To delete it, you do the same thing but in the 
+          other direction until you see an arrow sign. We will now create multiple 3D regions and rename the workspace to „Multiple windows“. Notice that you may 
+          also change the region from the 3D view space to other region types. For example to the Image Editor or the shader Editor.
+        </p>
+        <p>
+          For now we will go back to the normal Layout workspace. We will now learn how to add and remove objects in the scene. We have seen so far that we can add 
+          objects here in the „Add“ option. Let's now add an cylinder. When we add the object, we will see that it will be created at the center of the coordinate 
+          system, to be specific at the position of the 3D cursor. Let's move the object out of the way for now. You can use the tool „Move“ or the Shortcut <strong>G</strong> for this. 
+          The 3D cursor is per default in the center of the world, sometimes you move it by mistake by clicking <strong>SHIFT + right click</strong>, to get it back to it's position 
+          type <strong>SHIFT + S</strong> and click „Cursor to World origin“.
+        </p>
+        <p>
+          To modify our cylinder we may use rotation, moving or scaling. Let's now scale it down with the „Scale“ tool or the shortcut <strong>S</strong>. If you use the shortcuts 
+          for these tools here, memorise that you can restrict these to a specific axis by additionaly clicking <strong>X,Y or Z</strong>.
+        </p>
+        <p>
+          Scale the cylinder now down and extend the length, you may want to see it from the frontview (by clicking on X on the coordinate system). It is supposed to 
+          resemble a leg of a tiny cube figure. Copy the Cylinder now by clicking <strong>CRTL + C</strong> and <strong>CTRL + V</strong> or <strong>SHIFT + D</strong>. 
+          If you accidently created to many legs, you may delete it by selecting the object and clicking <strong>delete or X</strong>. The later one will show you an 
+          extra dialog if you are sure. Add another cylinder and rotate it a bit. 
+          This will be an arm. You can copy and then mirror the object by the Z axis to create the second arm. Now you can see that all new objects are listed in 
+          the hierarchy next to our initial objects. Select all the objects of the cube person and then press <strong>CTRL + J</strong> to combine them. We will call the object „cube figure“.
+        </p>
+        <p>
+          Let's now go back to our custom workspace and inspect the figure from different perspectives. Before we do anything weh ave to apply the transformations to 
+          adjust the axis of the figure again. Press <strong>CTRL + A</strong> do apply it. By clicking on the „Local“ option here, you may see the local axis of the object. If you 
+          rotate the object you may see that it rotates with the object compared to the default view. When you click on the coordinate system, you can see that the view 
+          perspective changes. On default we see a perspective view, but here we will see an orthographic view of the object, which helps by modifying an object from the side. 
+          Remember this custom workspace when you read the Theory part about global and local axis.
+        </p>
+        <p>Thank you for your participation.</p>
+        <p>This concludes the tutorial for this session.</p>
+        <!-- Fill out rest-->
+      </app-collapse-component>
     </div>
     <div class="quiz">
       <app-quiz-component question="In this section I mentioned a first shortcut. Can you remember how to toggle fullscreen on a specific area?" 

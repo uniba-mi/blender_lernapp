@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './welcome/welcome.component';
-import { PocComponent } from './poc/poc.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 import { FormsModule } from '@angular/forms';
 
 import { APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -16,7 +15,8 @@ import { AboutComponent } from './about/about.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BasicVideoComponentComponent } from './basic-video-component/basic-video-component.component';
 import { XmlVideoComponentComponent } from './xml-video-component/xml-video-component.component';
-import { QuizComponentComponent } from './quiz-component/quiz-component.component';
+import { QuizComponent } from './quiz-component/quiz-component.component';
+import { CollapseComponent } from './collapse-component/collapse-component.component';
 import { RequiredToolsComponent } from './setup-required-tools/setup-required-tools.component';
 import { AboutElearningComponent } from './setup-about-elearning/setup-about-elearning.component';
 import { BlenderUiComponent } from './basics-blender-ui/basics-blender-ui.component';
@@ -41,12 +41,12 @@ import { ConclusionComponent } from './conclusion/conclusion.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    PocComponent,
+    WelcomeComponent,
     AboutComponent,
     BasicVideoComponentComponent,
     XmlVideoComponentComponent,
-    QuizComponentComponent,
+    QuizComponent,
+    CollapseComponent,
     RequiredToolsComponent,
     AboutElearningComponent,
     BlenderUiComponent,
