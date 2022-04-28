@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './welcome/welcome.component';
 import { PocComponent } from './poc/poc.component';
 import { FormsModule } from '@angular/forms';
 
@@ -19,49 +19,23 @@ import { XmlVideoComponentComponent } from './xml-video-component/xml-video-comp
 import { QuizComponentComponent } from './quiz-component/quiz-component.component';
 import { RequiredToolsComponent } from './setup-required-tools/setup-required-tools.component';
 import { AboutElearningComponent } from './setup-about-elearning/setup-about-elearning.component';
-import { FirstStartupComponent } from './basics-first-startup/basics-first-startup.component';
 import { BlenderUiComponent } from './basics-blender-ui/basics-blender-ui.component';
-import { ViewportComponent } from './basics-viewport/basics-viewport.component';
-import { TCoordinateSystemComponent } from './basics-theory-coordinate-system/basics-theory-coordinate-system.component';
-import { EditModeComponent } from './basics-edit-mode/basics-edit-mode.component';
-import { FirstSceneComponent } from './basics-first-scene/basics-first-scene.component';
+import { BasicToolsComponent } from './basics-tools/basics-tools.component';
+import { TheoryCoordinateSystemComponent } from './theory-coordinate-system/theory-coordinate-system.component';
+import { BasicModifiersComponent } from './basics-modifiers/basics-modifiers.component';
 import { AnimationChapterOverviewComponent } from './animation-chapter-overview/animation-chapter-overview.component';
-import { CreatingRobotPartOneComponent } from './animation-creating-robot-part-one/animation-creating-robot-part-one.component';
-import { CreatingRobotPartTwoComponent } from './animation-creating-robot-part-two/animation-creating-robot-part-two.component';
-import { CreatingRocketComponent } from './animation-creating-rocket/animation-creating-rocket.component';
-import { FinishRobotComponent } from './animation-finish-robot/animation-finish-robot.component';
-import { ImportingObjectsComponent } from './animation-importing-objects/animation-importing-objects.component';
-import { CreatingRigComponent } from './animation-creating-rig/animation-creating-rig.component';
-import { ParentingRigComponent } from './animation-parenting-rig/animation-parenting-rig.component';
-import { RestrictingBonesComponent } from './animation-restricting-bones/animation-restricting-bones.component';
-import { SetupSceneComponent } from './animation-setup-scene/animation-setup-scene.component';
-import { AnimateRobotComponent } from './animation-robot/animation-robot.component';
-import { AnimateRocketComponent } from './animation-rocket/animation-rocket.component';
-import { AnimateRotatorComponent } from './animation-rotator/animation-rotator.component';
+import { AnimationComponent } from './rigging-and-animation/rigging-and-animation.component';
 import { ModellingChapterOverviewComponent } from './modelling-chapter-overview/modelling-chapter-overview.component';
-import { AddingReferenceMaterialComponent } from './modelling-reference-material/modelling-reference-material.component';
-import { BlockingOutComponent } from './modelling-blocking-out/modelling-blocking-out.component';
-import { ShapingUpOneComponent } from './modelling-shaping-up-one/modelling-shaping-up-one.component';
-import { ShapingUpTwoComponent } from './modelling-shaping-up-two/modelling-shaping-up-two.component';
-import { AddingWheelsComponent } from './modelling-adding-wheels/modelling-adding-wheels.component';
-import { AddingBlackPartsComponent } from './modelling-adding-black-parts/modelling-adding-black-parts.component';
-import { CuttingDoorsComponent } from './modelling-cutting-doors/modelling-cutting-doors.component';
-import { AddingDetailsComponent } from './modelling-adding-details/modelling-adding-details.component';
-import { AddingLaddersComponent } from './modelling-adding-ladders/modelling-adding-ladders.component';
-import { UsingCurvesComponent } from './modelling-using-curves/modelling-using-curves.component';
-import { AddingTexturesComponent } from './modelling-adding-textures/modelling-adding-textures.component';
-import { AddingExtinguisherComponent } from './modelling-adding-extinguisher/modelling-adding-extinguisher.component';
-import { AddingWindowsComponent } from './modelling-adding-windows/modelling-adding-windows.component';
-import { AddingStairsFrontComponent } from './modelling-adding-stairs-front/modelling-adding-stairs-front.component';
-import { AddingLightsComponent } from './modelling-adding-lights/modelling-adding-lights.component';
-import { AddingTopLightComponent } from './modelling-top-light/modelling-top-light.component';
-import { FinishingModelComponent } from './modelling-finishing-model/modelling-finishing-model.component';
-import { AddingMaterialsComponent } from './modelling-adding-materials/modelling-adding-materials.component';
-import { TRiggingComponent } from './animation-t-rigging/animation-t-rigging.component';
-import { TMaterialsAndTexturesComponent } from './modelling-theory-materials-and-textures/modelling-theory-materials-and-textures.component';
-import { TModifiersComponent } from './modelling-theory-modifiers/modelling-theory-modifiers.component';
-import { TCurvesComponent } from './modelling-theory-curves/modelling-theory-curves.component';
-import { RenderingComponent } from './modelling-rendering/modelling-rendering.component';
+import { ModelBodyComponent } from './modelling-wall-e-body/modelling-wall-e-body.component';
+import { ModelWheelsComponent } from './modelling-wall-e-wheels/modelling-wall-e-wheels.component';
+import { ModelHeadComponent } from './modelling-wall-e-head/modelling-wall-e-head.component';
+import { ModelArmsComponent } from './modelling-wall-e-arms/modelling-wall-e-arms.component';
+import { ModelPlantComponent } from './modelling-plant/modelling-plant.component';
+import { TheoryRiggingComponent } from './theory-rigging/theory-rigging.component';
+import { TheoryMaterialsAndTexturesComponent } from './theory-materials-and-textures/theory-materials-and-textures.component';
+import { TheoryModifiersComponent } from './theory-modifiers/theory-modifiers.component';
+import { TheoryCurvesComponent } from './theory-curves/theory-curves.component';
+import { ColoringComponent } from './coloring-and-rendering/coloring-and-rendering.component';
 import { ConclusionComponent } from './conclusion/conclusion.component';
 
 @NgModule({
@@ -75,49 +49,23 @@ import { ConclusionComponent } from './conclusion/conclusion.component';
     QuizComponentComponent,
     RequiredToolsComponent,
     AboutElearningComponent,
-    FirstStartupComponent,
     BlenderUiComponent,
-    ViewportComponent,
-    TCoordinateSystemComponent,
-    EditModeComponent,
-    FirstSceneComponent,
+    BasicToolsComponent,
+    TheoryCoordinateSystemComponent,
+    BasicModifiersComponent,
     AnimationChapterOverviewComponent,
-    CreatingRobotPartOneComponent,
-    CreatingRobotPartTwoComponent,
-    CreatingRocketComponent,
-    FinishRobotComponent,
-    ImportingObjectsComponent,
-    CreatingRigComponent,
-    ParentingRigComponent,
-    RestrictingBonesComponent,
-    SetupSceneComponent,
-    AnimateRobotComponent,
-    AnimateRocketComponent,
-    AnimateRotatorComponent,
+    AnimationComponent,
     ModellingChapterOverviewComponent,
-    AddingReferenceMaterialComponent,
-    BlockingOutComponent,
-    ShapingUpOneComponent,
-    ShapingUpTwoComponent,
-    AddingWheelsComponent,
-    AddingBlackPartsComponent,
-    CuttingDoorsComponent,
-    AddingDetailsComponent,
-    AddingLaddersComponent,
-    UsingCurvesComponent,
-    AddingTexturesComponent,
-    AddingExtinguisherComponent,
-    AddingWindowsComponent,
-    AddingStairsFrontComponent,
-    AddingLightsComponent,
-    AddingTopLightComponent,
-    FinishingModelComponent,
-    AddingMaterialsComponent,
-    TRiggingComponent,
-    TMaterialsAndTexturesComponent,
-    TModifiersComponent,
-    TCurvesComponent,
-    RenderingComponent,
+    ModelBodyComponent,
+    ModelWheelsComponent,
+    ModelHeadComponent,
+    ModelArmsComponent,
+    ModelPlantComponent,
+    TheoryRiggingComponent,
+    TheoryMaterialsAndTexturesComponent,
+    TheoryModifiersComponent,
+    TheoryCurvesComponent,
+    ColoringComponent,
     ConclusionComponent
   ],
   imports: [

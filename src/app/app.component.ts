@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
   hideBackButton: Boolean = false;
   hideNextButton: Boolean = false;
 
-  public routerLinks = ["/home", "/required-tools", "/about-elearning", "/first-startup", "/blender-ui", "/viewport", "/t-coordinate-system",
-                        "/edit-mode", "/first-scene", "/modelling-chapter-overview", "/adding-reference-material", "/blocking-out", 
+  public routerLinks = ["/home", "/required-tools", "/about-elearning", "/blender-ui", "/basic-tools", "/t-coordinate-system",
+                        "/basic-modifiers", "/modelling-chapter-overview", "/adding-reference-material", "/blocking-out", 
                         "/shaping-up-one", "/shaping-up-two", "/t-modifiers", "/adding-wheels", "/t-mat-tex", "/adding-materials", 
                         "/adding-black-parts", "/cutting-doors", "/adding-details", "/adding-ladders", "/t-curves", "/using-curves", 
                         "/adding-textures", "/adding-extinguisher", "/adding-windows", "/adding-stairs-front", "/adding-lights", 

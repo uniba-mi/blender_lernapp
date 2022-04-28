@@ -1,0 +1,39 @@
+<div id="start_content">
+    <h3 id="toc_blender">Wall-E Body</h3>
+    <div class="ui info message">
+      <h5>In this section you will learn:</h5>
+      <ul>
+        <li>How to import reference material into your scene</li>
+        <li>How to set up your workspace with the reference images</li>
+        <li>How to add materials to your objects and assign it to specific faces</li>
+        <li>How to use the knife modifier in a complex model</li>
+        <li>How to use the mirror modifier in a complex model</li>
+        <li>How to use the bevel modifier in a complex model</li>
+        <li>How to use the inset modifier in a complex model</li>
+        <li>How to use the extrude modifier in a complex model</li>
+        <li>How to create complex custom shapes</li>
+      </ul>
+    </div>
+    <div class="ui info message download">
+      <h5>Please grab the material needed for this section <a href="./assets/files/reference_material.zip" target="_blank" download="reference_materials.zip">here</a></h5>
+      <p class="source">Source of the images: https://images.app.goo.gl/68KsuVptpeRXEzcB6</p>
+    </div>
+    <div class="vdiv">
+      <app-xml-video-component videoname="ft_adding_reference_material.mp4"></app-xml-video-component>
+    </div>
+    <div class="quiz">
+      <!-- Change the answers -->
+      <app-quiz-component question="For some reason you cannot see your reference material when you rotate around your object. What can be the cause?" 
+        correctAnswer="The image was added as background" [answers]="['The image was not added as background','The image was added as background',
+        'The files is missing on your computer']" qId="ID1"></app-quiz-component>
+      <app-quiz-component question="Can an object have multiple materials applied to it?" 
+        correctAnswer="Yes" [answers]="['No','Depends on the object',
+        'Yes']" qId="ID1"></app-quiz-component>
+      <app-quiz-component question="After editing an object a tool you want to use does not behave like expected. What can you do?" 
+        correctAnswer="Check my objects properties. I might have missed to apply rotation or scale." [answers]="['Restart Blender. Restart always helps.','Update to a newer version of Blender. This must be a bug.',
+        'Check my objects properties. I might have missed to apply rotation or scale.']" qId="ID1"></app-quiz-component>
+      <app-quiz-component question="Why should you always join objects as late as possible? (here: at the end of a session)" 
+        correctAnswer="It is easier to make modifications to smaller parts" [answers]="['It is easier to make modifications to smaller parts','Joining takes a long time',
+        'Once you join you cannot separate parts again']" qId="ID1"></app-quiz-component>
+  </div>
+</div>

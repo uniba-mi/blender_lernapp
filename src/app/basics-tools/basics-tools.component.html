@@ -1,0 +1,36 @@
+<div id="start_content">
+    <h3 id="toc_blender">Basic Tools</h3>
+    <div class="ui info message">
+      <h5>In this section you will learn:</h5>
+      <ul>
+        <li>The difference between operations in object and edit mode</li>
+        <li>How to toogle the X-Ray option</li>
+        <li>How to see and manipulate faces, edges and vertices manually</li>
+        <li>How to manipulate and fix meshes manually</li>
+        <li>How to hide objects</li>
+        <li>How to use the following tools and their shortcuts: Extrude, Inset, Bevel, Loop Cut, Knife, Merge</li>
+      </ul>
+    </div>
+    <div class="vdiv">
+      <!-- TODO: Change the video -->
+      <app-basic-video-component videoname="first_steps.mp4"></app-basic-video-component>
+    </div>
+    <div class="quiz">
+      <!-- Change question -->
+      <app-quiz-component question="What is the shortcut for filling a face between selected edges or vertices?" 
+        correctAnswer="F" [answers]="['F','Shift+F',
+        'Alt+F']" qId="ID1"></app-quiz-component>
+      <app-quiz-component question="At what position will objects you add in be created?" 
+        correctAnswer="At the 3D cursor" [answers]="['At the current mouse cursor position','At the 3D cursor',
+        'At a random position within space and time']" qId="ID1"></app-quiz-component>
+      <app-quiz-component question="What is the shortcut for extruding?" 
+        correctAnswer="E" [answers]="['Depends on what you have selected','E',
+        'Strg+E']" qId="ID1"></app-quiz-component>
+      <app-quiz-component question="In the video I merged four vertices to create a pyramid shape. Can you remember the shortcut?" 
+        correctAnswer="M or Shift+M depending on the Blender version" [answers]="['There is no shortcut to do this','Strg+M',
+        'M or Shift+M depending on the Blender version']" qId="ID1"></app-quiz-component>
+      <app-quiz-component question="What is the main reason you want to add objects in edit mode" 
+        correctAnswer="There is no need to join later" [answers]="['There is no need to join later','To save time',
+        'To optimize the mesh']" qId="ID1"></app-quiz-component>
+    </div>
+</div>
