@@ -35,7 +35,7 @@
             "scripts": [
               {
                 "input": "src/prism.js",
-                "inject": false
+                "inject": true
               }
             ]
           },
@@ -50,7 +50,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
