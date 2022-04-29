@@ -19,8 +19,207 @@
       <h5>Please grab the material needed for this section <a href="./assets/files/leaf_texture.jpg" target="_blank" download="leaf_texture.jpg">here</a></h5>
     </div>
     <div class="vdiv">
-        <app-basic-video-component videoname="Video_9_Coloring.mp4"></app-basic-video-component>
-      </div>
+      <app-basic-video-component videoname="Video_9_Coloring.mp4"></app-basic-video-component>
+    </div>
+    <div class="collapsible-component">
+      <app-collapse-component message="I want to read" qId="ID1">
+        <p>Welcome to this session.</p>
+        <p>
+          Today we are going to learn how to use some other workspaces than Modeling, how to texture our models and finally we will 
+          render a scene as a photo.
+        </p>
+        <p>
+          Also we want to finish the plant we started in the last session. As you remember we didn't yet apply the modifiers of the 
+          leaf model, so that we can texture it beforehand. For this particular textur, we want to use an image as a texture I already 
+          prepared. Select the leaf and go into the UV Editing workspace. There we can open the prepared leaf texture. It will we 
+          opened in the left window here. Instead of painting the image on top of the model, we kind of do the exact opposite. The 
+          goal is to unwrap the 3D mesh so that we have a 2D version of it, that can be placed on top of the texture image so that 
+          it can be referenced back.
+        </p>
+        <p>
+          Before we can unwrap the mesh though, we have to tell Blender where we want to cut the mesh open, so that we can transform 
+          it into 2D. This process is quite easy for the leaf, as we can just select the edge around the object from the side with 
+          <strong>ALT select</strong>. To mark this edge for UV unwrapping, right click and chose the option "Mark seam", now the seam 
+          is marked red in the right window. To unwrap the mesh now, select all of the points, I used the shortcut <strong>A</strong> 
+          here to do this and then press the shortcut <strong>U</strong> and choose "unwrap" to create the 2D mesh that will be 
+          displayed now on the texture image on the left.
+        </p>
+        <p>
+          Now we can begin to move the leaf front and back parts to their correct position as they are currently just placed somewhere 
+          on the image. Here the brush select tool with the shortcut <strong>C</strong> helps a lot to select all the relevant points. 
+          Now that we have a rough placement, we may also want to see the result of the texture editing on the final model on the right. 
+          For this we have to add the texture image also to the Coloring pipeline of the model. Currently we just defined a basic green 
+          color for this model, but now we want to change this. For this reason we go into the Shading workspace. As we have still 
+          selected the leaf and there is only one color, the correct color is already placed inside the slot. You may remember the 
+          shading options from the property panel on the right side. But in this workspace we can define it more thorough.
+        </p>
+        <p>
+          We can define the shading here via nodes and edges, this is quite similar to visual coding: the flow is from the left node 
+          to the right, so the inputs of a node are on the left and the output is on the right. The basic color definition is composed 
+          of the Principal BSDF and a Material output. The only thing we want to change in this shading is the base color which is 
+          currently just green. Instead of this we want to add an image texture instead. So we add the node "Image Texture", open 
+          our leaf texture and connect the color output to the base color input. In the 3D viewer above you can directly see the 
+          impact of the change.
+        </p>
+        <p>
+          Let's now go back to the UV Editing workspace as we still have to properly align the mesh to the texture. A tool I find 
+          pretty useful here is the Proportional Editing we used before, this time however I take the "Smooth" option which is more 
+          fitting for the task. Then you can easily change the points by moving and scaling to align them better. The direct effect 
+          can be seen on the right. Here the most important thing is to just not have white edges as they can be seen easily. Repeat 
+          the same process for the back side of the leaf. In the end you can check on the right, if the texture seamingly aligns at 
+          the edges.
+        </p>
+        <p>
+          As you may have noticed because we use the same color for the stem it also changed when we added the texture. If you go 
+          back to the UV Editing with the stem selected you can see the reason why. It is also just randomly placed over the image. 
+          Here the unwrap is automaticly done, I additonaly create a seam on the top and bottom and one along the steam to show how 
+          you would cut a more complex object. For our purpose however you would not have to do this. When all seams are marked, unwrap 
+          it again with the shortcut <strong>U</strong>. Then I just scaled the whole steam mesh down and placed it inside the leaf 
+          texture. I do this here because I wanted the same green color with some additional variation. You may also define your 
+          own color for it or use another texture image.
+        </p>
+        <p>
+          Now the plant is fully done, so we can apply our modifiers and join the objects together. The helping object like the 
+          Bezier curves and empty objects can now be deleted. In the end make the vase visible again and position the plant inside.
+        </p>
+        <p>
+          Then we have a look at the vase and re-define the colors of it. As we learned before, select the vase and go into the 
+          Shading workspace. To select the orange vase color, go into the slot options and find it there. This time instead of using 
+          a texture we want to define a procedural color just using nodes.
+        </p>
+        <p>
+          Currently the vase looks too smooth, so we want to adjust the normals by adding a bump node. This node alone does not do 
+          very much, because there is no information of where to add something. Here we use a random Noise Texture and use the color 
+          information to go into the Height input of the bump node so that we generate random bumps on the vase. As you see this is 
+          a bit too coarse, so I scale it a bit and also add some detail. This looks more like the right texture but still too much 
+          of it, so I decrease the strength of the bump node to a more appropriate level, here roughly 0.12. Then to finish the plant 
+          we have to take care of the dirt color. For this we use the same trick of using a bump node and a noise texture, this time 
+          having it more coarse. Then I also increase the roughness and decrease the specular because dirt normally does not reflect 
+          that much light but instead absorbs it. You may also adjust the Base color at any point.
+        </p>
+        <p>
+          Now we can scale our objects accordingly and join them together. As we are done working with the plant I set its position 
+          next to our robot, so we have a better height comparison. At this point we have reached almost the finished product compared 
+          with the reference image. Now want to tackle the shading of the robot.
+        </p>
+        <p>
+          To have the texturing looking better at the end, you can at this point smooth the faces of the parts that are supposed to 
+          be round. Currently we still see too much of the hard edges there. Just select the relevant faces, right click and select 
+          "Shade smooth", you will see that it significantly changes how the object looks. At the bottom corners I have noticed that 
+          we have a corner still looking through. I ignored it here, but if you want you can just move the parts a bit outside to 
+          cover the edges. At the neck I noticed that the points are not merged correctly at the center but overlapping, so I select 
+          and merge them here by distance using the shortcut <strong>M</strong>. Then I proceed shading round faces at the neck and 
+          the eye parts and then the arms. I notice that somehow the shading looks odd, so I go to the properties panel and choose 
+          the auto smooth option for the normals. That normally fixes this issue. I then choose to go back to every object and also 
+          use the auto smooth option there.
+        </p>
+        <p>
+          At last we also smooth the wheels at the relevant faces. This alone lets the robot look much cleaner. Here I also finally 
+          realize that I positioned the upper legs part not correct and fix it.
+        </p>
+        <p>
+          Now that we have cleaned up the model, we go back to the shading. The first color we are going to finish is the normal not 
+          rusty metal color. Here again we use the bump Node and a Noise texture we already know. This time however we use an additional 
+          Noise Texture put into the other one to create an interesting texture here which I find quite fitting. Of course we have to 
+          scale everything again to a more sane level. Here a scale of 40 for the front noise texture and roughly 10 for the back noise 
+          texture worked quite well. As before we want to reduce the bump impact quite a bit. Then you can play around with the metal 
+          and specular options a bit until you are happy with the result. For the last touch to make the metal look less clean I also 
+          want to change the color on some parts. Here we use a ColorRamp Node to define a color gradient which is per default black 
+          to white. Adding in the information of the front noise texture it already looks okay, so I just change the black color to a 
+          more dirty brownish color.
+        </p>
+        <p>
+          Next we are going to tackle one of the big ones which is pretty similar: The rusty metal. Here we want to create a smiliar 
+          texture like before but there are supossed to be bigger chunks in the texture where there are rusty holes inside the metal. 
+          To do that we want to use a bump node again and use a noise texture. Additionally we need a texture coordinate and a mapping 
+          node that helps to scale the texture. Then we want the noise to be very detailed, you will see the effect we want, if you 
+          add a ColorRamp in between and change the left slider. Basically we erase most of the noisyness here, so that the noise parts 
+          look like holes of damaged metal parts. To properly have the texture aligned you also have to apply the scaling transformation. 
+          Just use the shortcut <strong>CTRL + A</strong> to apply it. As we have now defined the holes, we can use the same noise 
+          information with a ColorRamp again to define the rust parts there. To do this we introduce some additional sliders in the 
+          middle. So we have a reddish color tone on the middle left side and then immediatly a more greyish-yellowish tone right to 
+          it. You may already see where this will go by looking on the 3D viewer. Left to the red-brownish tone I also use a more 
+          lighter brown to create the rust effect. At last we want to add our metal texture here again, so we use another bump node 
+          and some noise texture nodes as we did before.
+        </p>
+        <p>
+          The next color to tackle is the yellow rust, so you can basically copy our progress here and paste it in the yellow color 
+          slot. Here you just adjust the edges again and also change the greyish-yellow to a more dark-yellow we used before for the 
+          base color. I just copied the hex value and pasted it to the ColorRamp. When connecting the nodes, you can see that the 
+          scale is not properly applied yet, so we have to do that now. Also don't forget to adjust the values for the Metallic and 
+          Specular. Next we are going to do the same trick for the wheels and the rusty brown. You may want to stop the video and do 
+          this for yourself. We will proceed in a second.
+        </p>
+        <p>
+          Again connecting the edges and adjusting the colors of the ColorRamp to a more brownish color. Applying the scale and then 
+          adjusting the values in the end. The wheels are supossed to be much rougher and less specular. I also adjusted the noise a 
+          bit to make it even rougher.
+        </p>
+        <p>
+          Next we have only some little color adjustments to make. Starting with the display, making it more reflecting and less rough, 
+          same for the black display color behind it. Then the red button which can be a bit rougher but not so specular. Then we also 
+          have the other red color at the back which can be made a bit more metallic and also smooth.
+        </p>
+        <p>
+          The detail at the arms should also be a bit more reflective and less rough. Then make sure to apply also all the scaling at 
+          the hands. At last I focused on the eye colors. Here we can use again a bit of a rough shading with the bump and noise 
+          texture and also make the white a bit more dirty as we did before. For the iris you may choose any color we want the robot 
+          to have. I have gone with a dark purple. The pupil we make black and also non-reflective.
+        </p>
+        <p>
+          Now you may remember that we left out a part of the eyes, we made invisible before. Now we can finally prepare the see-trough 
+          glass texture of the lenses. For this we can just use a glass BSDF instead of a the Principled BSDF. Here you can see one 
+          difference in the the rendering engine. You can select the engine in the properties panel. Blender supports both Eevee and 
+          Cycles. For now we have only worked inside the real-time rendering engine Eevee to have a fast preview, for the glass to 
+          work properly we have to use Cycles and wait for it to generate a picture. Not only do we now see through the glass but 
+          also the shadows are more correct now.
+        </p>
+        <p>
+          You may also mix in a glossy shader if you want to have not a perfectly clean glass. Just use a very small effect value 
+          here though. In the end also shade the lenses smooth.
+        </p>
+        <p>
+          Here I also add another bump and noise texture for the dark metal I forgot.
+        </p>
+        <p>
+          Comparing our objects to the refrence image, we seem to be done. So now we focus on creating a little scene that we can 
+          then render as a photo. Select the robot and move it above the green y-axis which we are going to use as a ground height. 
+          Do the same for the plant.
+        </p>
+        <p>
+          Then we add three white planes, maybe scale them to like 100, use one as the ground and the other one as the back wall. 
+          Select them all and join them together. Now their points should roughly align, so we can use merging by distance again to 
+          connect the vertices together. We do this so that we can bevel the edges in the next step. At the end shade the whole thing 
+          smooth. Now we have a neutral background to render our photo.
+        </p>
+        <p>
+          Next we want to position the camera. You can either move it manually or use the shortcut <strong>CTRL + ALT</strong> and 
+          the <strong>Numpad Zero</strong> to position the camera right where you currently look at. You may also change the focal 
+          length of the camera if you want to have more things in the picture. When the camera is positioned we want to change back to 
+          Cycles again to see how an image might look. Currently there is just one point light in the scene. We can add another point 
+          light to have the display look like it's emitting it. Here of course the power should be decreased quite a bit and the color 
+          adjusted to yellow. Finally we add another light for the ambience, which simulates a sun light so that we don't have too 
+          much dark shadows at the back of objects.
+        </p>
+        <p>
+          Now we can prepare the rendering process. I will just go over some rough ideas what is possible to be selected here in the 
+          properties panel. First we check that we have a PNG as the output selected and either RGB or RGBA on. Then you can go into 
+          the light paths option and increase the values if you want glass textures to be improved. Toggle on denoising and heighten 
+          up the value to 30 for now. As you may see in the sampling options, we currently have 32 iterations in the viewport for the 
+          path tracing, the denoising now starts at the 30th iteration. The denoising is important to remove the noise generated by 
+          the path tracing. For the final render you want a higher number for the render iterations, I choose 500 and selected the 
+          denoising accordingly. The higher the iterations the longer the rendering will take but the more precise the final result 
+          is. All left to do is to render the image with the menu above. A new rendering window will be created but I only recorded 
+          one window here. You may then save the picture in the end. 
+        </p>
+        <p>
+          This is the final result for the rendering process. Next time we are going to see how to rig a character and how to make 
+          an animation.
+        </p>
+        <p>Thank you for your participation.</p>
+        <p>This concludes the tutorial for this session.</p>
+      </app-collapse-component>
+    </div>
     <h3 id="toc_further_references">Further references</h3>
     <div class="ui warning message">
         <ul>

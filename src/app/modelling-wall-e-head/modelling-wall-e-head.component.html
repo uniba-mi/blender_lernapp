@@ -9,6 +9,116 @@
     <div class="vdiv">
       <app-xml-video-component videoname="Video_6_Head.mp4"></app-xml-video-component>
     </div>
+    <div class="collapsible-component">
+      <app-collapse-component message="I want to read" qId="ID1">
+        <p>Welcome to this session.</p>
+        <p>
+          Our robot model is half finished now and it's starts to get into shape. Today we are going to create the head of the robot. 
+          Let's begin with analyzing the relevant parts: For the neck we are going to need some cylinders again that we may detail a bit. 
+          For the inner eyes we are also going to need circular shapes again, similar to the creation of the wheels. The outer eye part 
+          has a binoculars shape which we probably have to manually model to have it look like this.
+        </p>
+        <p>
+          First of all we now go into the orthographic side view and create our simple cylinder shapes for the neck. In the end we want 
+          to have a bottom neck part and a top part, which can move independently, so be aware when joining objects. Because the reference 
+          pictures are not totally aligned in my case and the reference model is not in it's default position, we have to estimate the 
+          positioning for our model a bit. This makes the process a bit more difficult but is probably more realistic compared to normal 
+          reference images.
+        </p>
+        <p>
+          The bottom cylinder does not really need details, since we don't see the most part. The upper cylinder can be modelled again 
+          similar to the wheels with some Insetting with the approrpiate tool or the shortcut <strong>I</strong> and then extruding 
+          inwards with <strong>E</strong> and moving the inner circle out again with <strong>G</strong> and Y-axis alignment. You can 
+          use the Mirror Modifier here to mirror the progress on the other side.
+        </p>
+        <p>
+          The cylinder part in the middle has some detailed top end, so we are going to first align the default cylinder and then extrude 
+          the upper face a bit, scale it down and extrude again. Coloring every object with our standard yellow color, and the neck is 
+          mostly done.
+        </p>
+        <p>
+          Before we go to the binoculars, we are going to create some connecting objects in the head center, which can be a bit more 
+          difficult to see. For the upper part, we want to create a black triangle shape but with the edges beveled. For this we are 
+          adding a cube, positioning it roughly where we want it and then merge the lower points together at the center with the 
+          shortcut <strong>M</strong>. To bevel the edges, just select all of the relevant ones at the side and then use the Bevel tool 
+          or the shortcut <strong>CTRL + B</strong> to adjust them accordingly, here again just scroll with the mouse wheel until you 
+          have enough subdividing edges. Create a new Color, I called it "Metal_Dark".
+        </p>
+        <p>
+          Now we have to add another connector bit, this time yellow. Here we create another cube and scale it accordingly, here we only 
+          have the front image as reference. You may just assume a shape that you find fitting for this part or go along with the tutorial 
+          version. I started with a direct connecting part, loop cutted trough the middle and then positioning the inner points so that we 
+          create a more interesting shape. You may already join the upper parts together and the lower parts so that we have a Neck_Top 
+          and Neck_bottom part.
+        </p>
+        <p>
+          Now that the neck is done, we want to create the shape of the binoculars. As with the back of the Body before we have many options 
+          to create such a custom shape. One of the ways presented here is to use a cube or cylinder and then either position the points 
+          manually or using the beveling tool as we did before. I used a cube here and tried this option as we did before. Using the 
+          vertices of the cube to position the outer form, and then using control points and the Bevel tool, to create a fitting curve. 
+          Watch out that you have the X-Ray toggled on if you want to model a 3D shape. Another option would also be to model the form with 
+          a 2D plane first and then extrude it in the end. Repeat the process of beveling and adjusting a few times and then you have a good 
+          approximation of the form quite fast. If you are happy with the front view of the object, we are going to have a look at the side. 
+          As you can see the first part is a bit bigger and then there is some indentation or insetting inwards. As we already now, that 
+          means we want to use the Insetting tool for the inner part. As you may see at the sharp corner, if we inset it too much the new 
+          vertices will overlap. Either you may stop before or just adjust or merge them at the end to get a consistent shape. In the end 
+          just extrude the shape until the end. To have a bit of detail we add four Loop cuts using the tool or the shortcut 
+          <strong>CTRL + R</strong>. If you have added them, you want to select the circle of faces around the object. To do this quite 
+          simply, you can use The <strong>ALT key</strong> and clicking with the left mouse. This may take some tries sometimes. When 
+          selected you can use the scale tool to move the faces inwards a bit. In the end we just color it with our default Metal 
+          color, the outer shape is done.
+        </p>
+        <p>
+          Our next focus is the front eye part. First select the front face and inset it again this time just minimally. After that you can 
+          extrude the inner face inwards and create a new Color for it, for example Eye_White, then assign it to the face. For the circular 
+          shape of the iris the easiest approach is to just add another cylinder and then detail it. Here again we will use the Metal color 
+          for the outer base. If you have placed the cylinder accordingly, use the Boolean modifier on the binoculars and choose difference 
+          here. We do that so that we can detail the iris part beyond the white face. You may apply it already since we don't move the iris 
+          later on. Now look at the reference image and create the contours of the eye with the inset tool. The outer and inner metal ring 
+          are supposed to be at the front, so we can also just extrude the faces in between them inwards. Especially the black pupil can be 
+          set wider inside. For the colored iris you may want to have the inner part more in front than the outer part so that it doesn't 
+          look too flat. For the iris and the pupil I created two new colors here. 
+        </p>
+        <p>
+          To finish the binoculars we want to add a glass lens at the front of the eye. To do this we use for the first time a sphere 
+          geometry. We move it to the front side of the eye and scale quite thin on the X-axis so that is also looks like a convex lense. 
+          You may already add a new color for this lense. For now I don't add the objects together because we will take care of the 
+          see-through glass texture later and for now I just make it invisible. Since we are done with the binoculars, we should now prepare 
+          for duplicating everything, therefore I clean up the names and structure of the project, naming the objects appropriatly. 
+          Like the wheels, we will have a left and a right side, which we want to move indepently and therefore need the objects also 
+          independently. Before mirroring it, I select all the objects and rotate them, so that we start at a straight position. Also 
+          make sure that there is a bit of space left to the center. Finally we duplicate and mirror the objects again at the y-axis 
+          like the wheels before so that they are directly independent objects. Like before we could also use the mirror modifier like 
+          we used to, but then we would have to seperate the objects again manually. After adding the left side, re-name the objects 
+          accordingly.
+        </p>
+        <p>
+          A detail we finally want to add to the head are the tubes from the binoculars at the back to the neck part. We will use a 
+          similar technique we already used for the wheeltracks. As you might already see we are going to start by adding a bezier 
+          curve, this time we don't want a closed circle but really a curve. One thing to pay attention to is that we have to fix the 
+          origin point of the curve which is right now somewhere in the center. As we want the origin to be at the start of the curve, 
+          we have to correct it. Either you can go into the Edit Mode and just move it over or the more difficult way I did: Move the 
+          curve so that the center point with the 3D cursor is at the start or end of the curve and then right click and set the origin 
+          of the geometry to the 3D cursor.
+        </p>
+        <p>
+          Then just adjust the bezier curve so that it follows the tube from the reference images. Since the curve is defined in 3D 
+          space it will take some time to adjust all points and control points in a reasonable manner. If you need more points to 
+          adjusting just subdivide the curve again. Also try to check from a 3D perspective if your tube shape makes sense. If you are 
+          finished with it, we want to add a tiny cylinder from which the tube will be created. Place it at the start of the curve. 
+          Then we want to use the Array and Curve modifier again. This time the relative offset should be exactly 1 so that there is no 
+          gap between the individual parts. If you are done with this part, you can apply the modifiers and color the tube. I used the 
+          dark Metal here. Then just mirror it to the other side. Since we are going to just add the parts to the top neck, it can all 
+          be joined together as one object called "Neck_top" here.
+        </p>
+        <p>
+          Now the head is already done and there is only one session left to finish the model part of the robot where we are going to 
+          create the arms and hands part of it.
+        </p>
+        <p>Thank you for your participation</p>
+        <p>This concludes the tutorial for this session.</p>
+      </app-collapse-component>
+    </div>
     <div class="quiz">
       <app-quiz-component question="You will often need loop cuts to add more edges to your object. What is the shortcut?" 
         correctAnswer="Strg+R" [answers]="['R','Alt+Z',

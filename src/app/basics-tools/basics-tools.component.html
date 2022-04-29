@@ -14,6 +14,131 @@
     <div class="vdiv">
       <app-basic-video-component videoname="Video_2_Basics.mp4"></app-basic-video-component>
     </div>
+    <div class="collapsible-component">
+      <app-collapse-component message="I want to read" qId="ID1">
+        <p>Welcome to this session.</p>
+        <p>
+          Today I want to show you some basic tools in Blender. You will learn how to use the Edit Mode and learn 
+          the difference to the Object Mode we saw in the last session.
+        </p>
+        <p>
+          Let's first go into the Layout view. We will refresh some basic operations. Transform the figure back to 
+          it's normal position and move it up, out of the way. Then build a little plattform for the figure and move 
+          the plattform up until it's roughly standing on the XY-plane. Then place the figure on top of it. You may 
+          want to stop the video and try it for yourself. The solution follows shortly.
+        </p>
+        <p><u>Solution:</u></p>
+        <p>
+          Set all transforms to zero. Use the move tool. We will build a little table as a plattform. Add a new cube 
+          and scale it wide to the side and scale it small in its height. Then we add another cube and scale it in the 
+          form of a tables leg. Copy the leg three times, place it at the right position and combine all the objects to 
+          one. Then move both objects to its final position.
+        </p>
+        <p>
+          Now we will select the figure and inspect it inside the Edit Mode. Until now we have only transformed the whole 
+          objects, now we will go inside of one object and modify it's mesh. To switch between different granularity of 
+          the view, select the wanted option in the new menu in the left corner. You will notice that we can now see all 
+          the vertices, edges and faces within an object and you probably can guess that we can modify each of them. 
+        </p>
+        <p>
+          As stated in the last session we will now have a look at the X-Ray option again. In normal view you can select 
+          each vertex,edge or face you can see. In the X-Ray mode you can select even the ones hidden on the backside or 
+          inside of an object.
+        </p>
+        <p>
+          Before we will learn our new tools waiting at the left side, we will first see how we can handle the mesh and 
+          even fix broken meshes. For that we go into the Face selection mode and click at the top face of the figure. 
+          Than we press the right mouse button and find the option to delete the face. Now we can see the inside of our figure.
+        </p>
+        <p>
+          Go now into the vertex selection mode and select two points. This counts as the same action as selecting an 
+          edge in the edge selection. Now click the right mouse button and click on subdivide, a new vertex will appear 
+          between the other ones. Do the same thing on the other side. We can now create our own edge by selecting the 
+          two new points and pressing <strong>F</strong>. If you would have selected at least three points or (equivalent 
+          to a face) then <strong>F</strong> will create a new face. We will do this now for left and the right side here.
+        </p>
+        <p>
+          Now we have two faces at the top. To merge them together, we can just dissolve the vertices we just created, so 
+          that we have the same face as it was at the beginning. With this knowledge you can fix a mesh if there are any 
+          issues (for example after using some modifiers).
+        </p>
+        <p>
+          In Edit Mode you have the same "Add" option as before but it does not behave equally. If you add an object in 
+          the Object Mode, it will be a seperate object. But if you add it in the Edit Mode, it will automatically belong 
+          to this object and will be counted as part of it's mesh and local axis. If you want to merge objects together 
+          into one, you can use a shortcut we used before. With <strong>CTRL + J</strong> you join objects together. This 
+          is equivalent to just adding all the objects within the Edit Mode.
+        </p>
+        <p>
+          Let's now go back into the Object Mode and create six copies of our figure. Place them in front of our main figure. 
+          You can make the ones invisible that you are currently not modifying by unchecking their visibility in the 
+          scene collection.
+        </p>
+        <p><u>Extrude:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/face/extrude_faces.html">here</a>)</p>
+        <p>
+          Starting with the first figure, we want to learn the Extrude tool. To use this tool, we will first select a 
+          face and then select the tool or press the shortcut <strong>E</strong>. When you now move the mouse up, you basically 
+          drag the face along the normal vector of the face and create four new points. When you have the face selected you can also 
+          scale it by clicking <strong>S</strong>. If you use these two tools you can easily create your first custom designs. 
+          For example we will create a hat for this figure.
+        </p>
+        <p><u>Inset:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/face/inset_faces.html">here</a>)</p>
+        <p>
+          The next tool is the Inset tool. This one helps you to create new faces facing inwards of an face. Easier to show 
+          than to explain this one, press the shortcut I after selcting the front face or the equivalent tool on the left side. 
+          Than you can define how far inside you want to create a new inner face. Also here, four new points are created. 
+          Combining this tool with extruding we can create an indentation. You can also do the same by insetting twice and then 
+          moving the points inside.
+        </p>
+        <p><u>Bevel:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/edge/bevel.html">here</a>)</p>
+        <p>
+          The Bevel tool is very helpful to create rounded corners. This time we will select all cube faces or all vertices 
+          of the cube. To use the Bevel tool you can use the shortcut <strong>CTRL + B</strong>. If you scroll with the mouse 
+          wheel more points can be added to the corners. More points create a smoother surface.
+        </p>
+        <p><u>Loop Cut:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/tools/loop.html">here</a>)</p>
+        <p>
+          Sometimes you need to make a cut around the whole object. In these cases you want to use the Loop Cut. You can use 
+          it with the shortcut <strong>CRTL + R</strong>. Similar to bevel you can influence the behavior of the tool with 
+          the mouse wheel. By scrolling you add more cuts to the object. For our cube figure we want to create two cuts at 
+          the top and two cuts at the bottom. The should ach be very near to each other. Then we go into the ortographic 
+          front view, toogle on the X-Ray and select the upper part of the cube. Move it to the side and adjust the points. 
+          Do the same things but to the other side on the bottom.
+        </p>
+        <p><u>Knife:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/tools/knife.html">here</a>)</p>
+        <p>
+          Watch out. This figure will be very scary. Not only do we work with the Knife tool, but also will we use the figure 
+          as kind of a halloween pumpkin. The shortcut for the Knife is the <strong>key K</strong>. Contrary to the loop cut, 
+          the knife only cuts one side in the dafult configuration which you can see in the Tool panel. You can now use it 
+          to cut whatever you want into the front face of the cube. Press <strong>Enter</strong> to cut the drawn lines out. 
+          If you want to use straight lines use the <strong>key A</strong> (* was changed to A). With the constraint mode you 
+          can cut straight according to your current view. So the best option is to be in the orthographic side view when 
+          using it. In the end you can use Extrude to finish your pumpkin face.
+        </p>
+        <p><u>Merge:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/merge.html">here</a>)</p>
+        <p>
+          The last and most easy tool is the Merge operation. For this just select any points you want to merge and press 
+          <strong>M</strong>. You will have several options how you want to merge them. We will merge them at the center. 
+          Sometimes its also useful to merge points by distance if they almost overlap each other. If you want you can 
+          use the merge tool again on the arms of the figure.
+        </p>
+        <p>
+          You can now go back to the Object mode and see the whole family of figures we created. Next time we will extend to 
+          family to their modifier cousins.
+        </p>
+        <p>
+          <u>Task:</u> If you want an extra challenge: Try to create your own figure using every tool we learned in this session.
+        </p>
+        <p>Thank you for your participation</p>
+        <p>This concludes the tutorial for this session.</p>
+      </app-collapse-component>
+    </div>
     <div class="quiz">
       <!-- Change question -->
       <app-quiz-component question="What is the shortcut for filling a face between selected edges or vertices?" 

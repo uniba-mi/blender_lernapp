@@ -20,6 +20,202 @@
     <div class="vdiv">
       <app-xml-video-component videoname="Video_4_Body.mp4"></app-xml-video-component>
     </div>
+    <div class="collapsible-component">
+      <app-collapse-component message="I want to read" qId="ID1">
+        <p>Welcome to this session.</p>
+        <p>
+          Today we will start to work on our main project in this learning environment. For this project we will create one of the cutest 
+          robots from a computer-animated science fiction film: WALL-E. You can find the necessary ressources, the reference images, 
+          attached. We will use them shortly.
+        </p>
+        <p>
+          First we start a new project in Blender, starting with the default scene prepared for us. The first thing we are going to do is 
+          to add the reference images so that we have a good idea on what to expect from our modeling. To do that there are basically 
+          three ways and it does not matter which one you choose: You can either go to <strong>Add->Image</strong> and add your image as 
+          a reference image from a folder, or do the same thing as a background image. The third way that I am going to take is to just 
+          drag the image from the folder to the scene. The only difference between these approaches are the default settings they will 
+          start with. Since we are going to look at them soon and change them to our needs, it does not matter how you include it in 
+          the project. One thing to note is that the image will always be included in the scene parallel to your current view, so make 
+          sure to go into the orthographic view before including the image. You can also rotate,move and scale it afterwards if you want to.
+        </p>
+        <p>
+          The first picture to include is the front of WALL-E, as you can see the main body is almost prepared for us with the starting 
+          cube. The settings I talked about before can be found withing the property panel in the image tab. We can choose wether we 
+          want the image to be like an object or always in front or always in the back. I will go with "always front" and later change 
+          the opacity and visibility as needed. You can also decide wether you want the image to be seen from only the front or also the 
+          back, and in which perspectives it is seen. I think the easiest workflow is to just see the side pictures in the orthographic 
+          view and only from the front, since I have prepared pictures for all sides. In the end I set the opcaity on, so that I can see 
+          our cube trough the picture. Now I will add the side pictures for all orthographic views and scale them so that they will fit 
+          to the bottom side of the cube. Prepare the workspace as it seems easiest to you, maybe you will find it easier to have the 
+          images next to your cube instead than on top of it. The last image I want to add is a perspective one, so we can also add it 
+          in a perspective view so that we can later compare the reference to the model if necessary.
+        </p>
+        <p>
+          Now that we prepared our workspace to our needs, we can start working on the WALL-E Body. First we want to move the points 
+          from the top a bit lower since the robots cube is a bit wider than it is tall. To make our modeling easier we want to add a 
+          color to our cube, so that we can later separate different regions better. The colours are just a substitute for now and we 
+          will redefine them later when we talk about shading and texturing, however please make sure that you use your defined colors 
+          consistently and name them appropriatly so that you dont have to adjust them manually later. We will name the first color 
+          "Rust_Yellow" which will be the main color of our robot. For now you can choose a brownish yellow for that or even use the 
+          eye dropper to just copy the color from the reference image.
+        </p>
+        <p>
+          Now we want to seperate the metallic part on top from the bottom part. Since we need the same line also on the sides we can 
+          use the Loop-Cut tool here or respectivally the shortcut <strong>CTRL + R</strong>. If you want a closed circle the loop-cut 
+          is good for making a cut around the whole object. To move the line click the mouse button down and keep it pressed until 
+          your are satisfied with the position. I accidently misclicked and added another horizontal line which is not necesarry here. 
+          Since we now have a seperate area, we add another color, name it "Metal" and make it grey and a bit metallic in the settings. 
+          To add it to the region, select the face and assign the color you just created to it.  To indent the upper area we can use 
+          the Extrude tool with the shortcut <strong>E</strong>. A problem you will notice is that it will create walls that should not 
+          be there, to prevent that go to the options after you used the shortcut and click on "dissolve orthogonal edges". 
+        </p>
+        <p>
+          Here I noticed that our scene structure is a bit chaotic, so I named the images appropriatly and moved them inside a new 
+          collection.
+        </p>
+        <p>
+          If you now look closely at the front, you can see that the middle upper part is yellow again, so one way of fixing this is 
+          to create a new area there. For this I am using the knife tool to cut from one edge to another one. Here you have to look 
+          closely at the settings in the tool bar. There are three options: If "Occlude geometry" is on the knife will only cut the 
+          front-most geometry. If we want to cut here from the orthographic front there are two edges before each other, so this 
+          setting will not work as expected. Another way is to tick the second option "Only Selected" and then select the face you want 
+          to cut. Then you will always cut through the correct face. To make a straight cut, use the shortcut <strong>C</strong> while 
+          having the knife selected (* Note here: The shortcut changed to C). To make the cut final press <strong>Enter</strong> to 
+          confirm it. If you created the new area, assign the yellow color to it.
+        </p>
+        <p>
+          To finish the front side for now, we add a new cube in the Object Mode, move it to the front and scale it to the right size. 
+          We can use the upper front edge to set the slope. Adjust the edge or the two vertices. Also assign the metal color to the 
+          cube. You can now join the objects together. We call the resulting object the "Body" for now.
+        </p>
+        <p>
+          After finishing the first part of the front side, we will now take care of the sides. Analysing the image we can see that the 
+          upper metal part of the front extends further to the back, the yellow main body has an indentation at the upper half seperated 
+          by a skewed line. There is a brown track drawn with an indentation where the arm can move along later.
+        </p>
+        <p>
+          To model the side we use a similar trick as before. Select the knife tool and trace the lines from the image. First we want 
+          to cut out the metal part. Don't forget to select the face first and check your tool settings. Press <strong>Enter</strong> 
+          if you want to finalize the cut. Next we do the same thing for the brown track. Try to be careful at the last cut line since 
+          we want the vertices to connect and the edges to form a circle. Now select the yellow face and add the skewed line. We are 
+          now finished with cutting and can now fill in the colors. Again we use the same "Metal" color and assign it to the two faces. 
+          For the brown track we have to create a new color we want to call "Rust_Brown". To finish the rough shape we use the shortcut 
+          <strong>E</strong> for extrude again and indend the upper yellow part, then we do the same for the brown track. At the end 
+          we add a cylinder, color it yellow, scale it to the correct size and move it to the right spot. Join the objects to the "Body". 
+        </p>
+        <p>
+          And then we are half finished. Since we have only done one side yet. For this instance we can use another trick. We are 
+          going to halve our "Body" object in two and mirror our progress to the other side. To do the split we could use either the 
+          loop cut tool twice, since the box in the front is not directly connected to the main part or we can use the knife tool again. 
+          This time we do want to cut trough all objects, so adjust the settings in the tool menu. Make sure to cut it from the 
+          ortographic front side to get a straight cut. After cutting the object we can now delete the side that we have not yet manipulated. 
+          Just delete the edges and vertices, you don't have to worry about them. To mirror our progress to the other side, we want to 
+          create an empty axis object and add it to WALL-E, I will call it the "Wall-E Origin". It has to be in the center point. Now that 
+          we have defined this point we can go to our Body half and add the mirror modifier, select the Origin point as the mirror object 
+          and select the Y axis to mirror. If you want to make sure that both of the sides will merge together you can go into the 
+          edit mode, select the according view option in the modifier selection and increase the merge value until both halves met at 
+          the center. If your object is done, go into the object mode again and apply the modifier. Now we have finished both sides.
+        </p>
+        <p>
+          Before we are going to have a look at the back, we want to add some details at the corners of the Body. Therefore we add a cube, 
+          scale it tiny and color it with the "Metal" color. Try to place the cube so that roughly a quarter of it is placed inside the 
+          yellow Body. After placing it we want to extend the three sides to cover the Body according to the images of the orthographic 
+          views. Select each face individually and extrude it. To get some round corners we want to use the bevel tool now. Select the 
+          edges at the outside of our detail object and use the shortcut <strong>CTRL + B</strong> to add beveling. You can scroll with 
+          the mouse wheel to get a finer partitioning. Click with the left mouse button to finalize it.
+        </p>
+        <p>
+          Now that we have finished this corner, we can use our mirroring trick again. Go into the object mode and select the mirror 
+          modifier for our detail, you can use the same Origin point we defined before. This time we want to mirror two times, along 
+          the X and Y axis to get our four details at the bottom.
+        </p>
+        <p>
+          For the details at the top of the Body we can use a similar strategy as we just did. You may want to pause the video now and 
+          try it for yourself to test your learned skills. We will proceed in a second.
+        </p>
+        <p>
+          The only difference at the top detail is that we want to create a slightly different form and only mirror it once. Create a 
+          new cube and repeat the same steps as before to position it at one of the corners. Now we want to select the faces again and 
+          extrude them according to the images. This time the line we see at the side view is connecting the front corner with the back. 
+          Extrude the detail at the end twice so that we have a new cube-shaped end at the other corner. This will make it easier to 
+          extrude the remaining directions. You can move the points manually with the XRay option on if you want to position them more 
+          accuratly. At the end we use the same bevel technique as before and mirror our detail again with the Origin point. At the end 
+          you can apply all modifiers and join the objects together.
+        </p>
+        <p>
+          Now we turn our attention to the back side. We can see that the middle parts are just basic shapes of cylinders and cubes. 
+          The most detailed pieces are the side objects which we are going to start with. Again we use cubes as the base object, scale 
+          it and position it roughly on top of where we want to create our model piece. If we now go into the side view we can move the 
+          points of the cube in the positions we want. make sure to have the X-Ray option on to select and move the points at the front 
+          and back of the cube together. One way to achieve this rounded shape is to use the bevel tool again on the one vertice that 
+          lies between the sharp points. Bascially we are using this point as a control point to create a curve shape. If you are not 
+          happy with your shape you can move the control point around until you roughly macth the reference image. For the bottom line 
+          we want to do the same thing, but we are missing a control point. To create a new one you can either manually divide the edges 
+          or just use the knife or loop cut tool, I decided on the loop cut here. Since we now have a new control point, we can do the 
+          same thing as before, moving our control point and then using bevel to create our curve shape. At this point I already mirror 
+          our object, you don't have to do it now but you may. I just wanted to see how it looks here.
+        </p>
+        <p>
+          Looking at the reference image we have achieved the outer shape, now we want to concentrate on the inner details. The first 
+          thing we want to create is the inner curve which is parallel to the outer one. In this instance we can use the Inset tool 
+          with the shortcut <strong>I</strong> after selcting the face we want to modify, this will create the inner shape we are 
+          interested in. Don't worry about the weird looking shape it will create for now. This probably occurs here because of the 
+          sharp edges which make problems. At this point I checked to apply all transformations to our object with <strong>CTRL+A</strong> 
+          because sometimes the scaling interfers with the Inset tool. Since this didn't help I accepted the weird shape and fixed the 
+          object manually. All the edges and vertices we do not need and were created extra, we can dissolve by selecting the vertices, 
+          clicking the right mouse button and click on dissolve. So the only thing remaining is the shape we are interest in. Then I 
+          finished the curve manually by using the knife tool again. The only thing left to do now is to use the knife tool for the 
+          rest of the object, cutting the straight lines according to the reference image. Always select the relevant faces before and 
+          check the tool menu so that we only cut on the one side of the object. If you do not want to select the faces individually 
+          each time, you can use <strong>C</strong> to use a round selection tool. So you can basically draw a selection. When you 
+          finished cutting the lines, we can color the faces accordingly by assigning the "Metal" color again, and then using Extrude 
+          in the end to move the yellow faces inwards. After applying a mirror this object is done.
+        </p>
+        <p>
+          All left to to on the back is to create the missing cubes and cylinders according to the images. For the cylinder object we 
+          introduce a new red color and using the "Metal" color for the end parts again. You can use the mirror modifier here again 
+          or just copy the object to the other side. Watch out when copying: All the colors attached to it we be copied too, so you 
+          have to manually select the original color again. The safer way would be to duplicate the object with <strong>Shift + D</strong>, 
+          then the colors should remain the same. In the end you can join everything together again.
+        </p>
+        <p>
+          At the end of this session we have a look again at the front side of the object to add some missing details. We want to create 
+          the interface on the metal chest piece and the indentations on the middle part. Starting with the display we can create a new 
+          cube, scale it down and create a new color for it, the "Rust_Metal" which I will for now just color a bit darker than the normal 
+          "Metal", you can mirror it to the other side here or duplicate it. For all the pieces here make sure that the objects overlap 
+          inside of the objects behind it so that there will be no space in between. For the display I also make sure that the display 
+          is really flat, so that you can not see it from the side. The next details will be the black display parts for which we 
+          introduce a new color "Display_black". Here again you should use duplicate with <strong>Shift + D</strong> instead of copying 
+          like me because than I have to make sure that I check the colors again. For the yellow parts we do the same thing as before 
+          but introducing the new color "Display_Yellow", for the bottom parts you may want to use the Array Modifier, so you don't 
+          have to duplicate each item individually. You only want to offset the items hower on the Z axis so that they will all stick 
+          to the display.
+        </p>
+        <p>
+          Then we want to to create the circular parts: First create a  new cylinder for the red button, you can introduce the new color 
+          "Display_Red". The button should stick out however compared to the items before. After that we create a yellow display part, 
+          not sticking out. However you will notice that there is a difference to the reference, we still have to cut out a hole in the 
+          middle. To do that we want to create a new cylinder and place it where we want to cut out, than we use the Boolean modifier 
+          on the outer circle to subtract the inner one. After applying the modifier you can delete the inner cylinder again to make 
+          the hole visible. Now the display part is done.
+        </p>
+        <p>
+          Now we only want to introduce some indentations on the front of the Body. For that we can use a cube again and use the same 
+          technique as with the cylinders just now. You want to use the Array modifier to create three similar cubes at once. Here 
+          again is a chance to try this part yourself as we have seen all relevant techniques before. We will proceed in a second.
+        </p>
+        <p>
+          The solution can be seen now. After applying the modifiers, and deleting the cubes you have to assign the yellow color again 
+          to the holes as they may be painted white now.
+        </p>
+        <p>
+          Now you can combine all the remaining objects within the robot together via join so that it is finished for now. Next time 
+          we are going to prepare the wheels of the robot.
+        </p>
+        <p>Thank you for your participation.</p>
+        <p>This concludes the tutorial for this session.</p>
+      </app-collapse-component>
+    </div>
     <div class="quiz">
       <!-- Change the answers -->
       <app-quiz-component question="For some reason you cannot see your reference material when you rotate around your object. What can be the cause?" 

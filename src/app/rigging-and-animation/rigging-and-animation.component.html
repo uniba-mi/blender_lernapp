@@ -15,6 +15,157 @@
     <div class="vdiv">
       <app-xml-video-component videoname="Video_10_Animation.mp4"></app-xml-video-component>
     </div>
+    <div class="collapsible-component">
+      <app-collapse-component message="I want to read" qId="ID1">
+        <p>Welcome to this final session.</p>
+        <p>
+          Today we are going to rig our Wall-E robot and create an animation. Let's start by selecting our robot collection and adding 
+          an armature. This will automatically create a bone with it from the start. We now want to display the bone in front of 
+          everything to make the rig easier to work with. This can be changed in the viewport display options.
+        </p>
+        <p>
+          The current bone we use as the starting point for our rig, the parent bone which controls all the others. Specifically here 
+          it will be used to control the Body. Because we want to add the neck bone in the next step, we are now going to extend the 
+          bone by moving the joint upwards. Similar to before we can just use the Extrude tool or the shortcut <strong>E</strong> to 
+          create another bone from the current joint and place it again in the center. Repeat this again for the top neck part. 
+          Automatically the new bones are always attached to their parent bone, so if you move the parent bone the children are 
+          moving with it. This behavior is called forward kinematics.
+        </p>
+        <p>
+          As discussed before we also want to create a bone for each of the eyes so we can move them independently. Currently the bones 
+          are not attached to the mesh. So if you move them nothing happens. We will change that after defining the rest of the rig.
+        </p>
+        <p>
+          Now that we are done with the head we want to create some new bones that are not directly attached to the other bones. Just 
+          add another bone manually, we will take care of the parenting in the next step. For now we create the bone for the arm. If 
+          you want to make sure that everything is aligned horizontally you can adjust the values of the head and tail joints directly. 
+          Here I already duplicated the arm bone before I realized that I can also just create all the bones necessary and then duplicate 
+          the whole arm and hand. Since we wanted to only differentiate between the back finger or thumb and the front fingers, we only 
+          need two bone threads coming from the main arm joint. The finger joints can be placed on top of the cylinders.
+        </p>
+        <p>
+          Now that I realize that I can duplicate my process I delete the arm on the right again and just use <strong>SHIFT + D</strong> 
+          on the whole arm selected and move the new arm over to the other side. To connect the arms to our main bone, select the main 
+          arm bone first and then the main bone, then use the shortcut <strong>CTRL + P</strong> to make a parent or like me who forgot 
+          the shortcut use right click and click on <strong>Parent->Make</strong> and keep the offset. You can now see the dotted line 
+          signaling the connection and the offset. If you want to test if your rig is correctly set up so far, you may go into the Pose 
+          Mode and move the main bone. If the bones are set up correctly they should all move with it.
+        </p>
+        <p>
+          Now we want to take care of the wheels. You may want to pause and test if you can do this yourself already. We proceed in a second.
+        </p>
+        <p>
+          We add a new bone like before and set the tail joint to the upper leg beginning, the head joint at the end of the cylinder. 
+          Then we can extrude another bone to the wheel which will hold all the main parts of the wheel. Then we only have to add two 
+          more bones for the two wheels that we want to rotate later. These ones have to be seperate bones again and will be then 
+          attached to the wheel bone we just created. Like before select the child first and then the parent before making the parent 
+          connection, again choose to keep the offset. For the wheel on the left side, we can just duplicate the whole frame again. 
+          Just mirror it by the global Y axis again and move it to its location. Now we are finished with the rig. The next step will 
+          be to attach it to the mesh.
+        </p>
+        <p>
+          To do this select the relevant object which you want to add to a bone, here I forgot to also add our display light along with 
+          the body. Then select the rig and change your mode from the object mode to the pose mode. Select the relevant bone in the 
+          Pose mode and use the shortcut <strong>CTRL + P</strong> to set the bone as the parent for the mesh. You can test if it worked 
+          correctly by moving the bone. Now the Body should move with our main bone. We now repeat this process for every object and 
+          bone which we want to connect. So the bottom neck to the bottom neck bone the upper neck to the upper neck bone and so on. 
+          You should test your model while connecting to make sure everything is set up correctly. For the wheel part watch out that you 
+          attach the static wheel parts, the wheel track and the bezier curve of the track to the wheel bone so that everything will move 
+          with it. The rotating wheels will be connected to the according bones which are already attached to the wheel bone, so you 
+          don't have to attach them directly. Repeat the same for the left wheel.
+        </p>
+        <p>
+          One thing which can be useful for animating later is to create a pose library, so I quickly show how to use that. Select the 
+          amature and go to the Pose Library, create a new one. Select all the relevant bones when adding a new pose, the current 
+          positioning will be the pose. So this one can be called the "Default". For another pose we could create a sad Wall-E face by 
+          rotating the eye bones. Select the relevant bones after changing them and create a new Pose for them, I called it "Sad". If 
+          you want to apply a pose use the magnifying glass on the right of the Pose Library. We won't use them for our animation but 
+          this can be a powerful tool to work with.
+        </p>
+        <p>
+          One thing you don't necessarily have to to, but can help very much in animating your figure is to use constraints to limit 
+          certain transformations of the bones. For example the eyes should not be able to rotate around the whole axis but only at 
+          a limited angle. So we can add a bone constraint similar to the modifiers we are used to. Make sure to work in the local 
+          space otherwise things behave weird really fast. On the eyes I limited the X axis rotation to -15 up to 15 degrees the other 
+          rotations I constrained to zero, so I can not use them at all. I now constrain most of the bones rotations here, this is 
+          mostly a process of try and error. Another constraint you may want to use on the upper neck is the Copy rotation constraint 
+          which can be inverted. So the rotation of the bottom neck is always automatically adjusted on the top. I will later delete 
+          this again here because it prevents the robot from looking up which I want to use in the animation.
+        </p>
+        <p>
+          I then left out the arms on purpose because we won't use them for our animation. If you want to set them up too, you may 
+          want to use a path constraint for the arm so that it follows the track. The constraint for the moving wheels is very easy, 
+          it is only allowed to move in one axis rotation and the other wheel can then just copy the rotation from it. Here I forgot 
+          to set the owner to local space which I will notice later on, please use the local space here. For the wheel and leg bone 
+          you can use the same trick with the inverted copy rotation again if you want to use that. Now the rig is set up for us and 
+          all that is left to do is to create our animation.
+        </p>
+        <p>
+          For our animation I want to use the perspective to trick the viewer. First the robot should drive into the scene and see a 
+          really big plant, then it goes out of the frame and when it comes back we see that it was actually just far away and is now 
+          as big or bigger as the plant. Here I am trying to figure out how far away the robot has to be placed and in which angle the 
+          camera should be placed for a good effect. I want the robot to be on a similar height to the plant when he drives to it.
+        </p>
+        <p>
+          If you are happy with your positioning you may also want to go to the Animation workspace wich is much more ideal to work 
+          with for animations. Now we have to define what our first frame should look like. Here the robot is suposed to be out of 
+          frame. To set the first keyframe of the animation select all the bones and press the shortcut <strong>I</strong> to insert 
+          a keyframe. Here you can specifically choose what transformation you are changing, for our purpose we can just always 
+          choose selected bones because we mostly only use one form of transformation.
+        </p>
+        <p>
+          You can now see that you created some points in the dope sheet below. Here all keyframes are listed and you can see which 
+          bones and which transforms are affected by it. For example if you have a keyframe of a bone in one position and then a 
+          second one further in the future at another position the bone will interpolate between the keyframes so a moving animation 
+          is created. For our first scene we want the robot to move inside the camera view and then stop, so we have to insert a new 
+          keyframe at the stop. Then you can already watch what the animation would look like. Here I am ignoring the wheels for now 
+          on purpose those will be the last thing for us to animate.
+        </p>
+        <p>
+          When the robot stopped we want it to look at the plant, kind of scanning it from bottom to top, confused by how large it is. 
+          So first we want to adjust the neck bones so that the robot is looking down. here I delete the copy rotation constraint 
+          which I talked about before because it was preventing the robot to look down. With our neck bones selected we insert new 
+          keyframes with I then again a new position where the robot looks up, inserting another keyframe. When there is no movement 
+          between two keyframes this is shown in the dope sheet by marking a dark connection between the two. For example I duplicated 
+          the keyframes from the middle of the animation because there was a pause missing after looking down. With the pause the 
+          animation seemed more reasonable to how a human or animal would behave. Here i tried to figure out why one of the keyframes 
+          did not move with thes rest until I realised that this marked a bone that I had not selected at the moment. After I 
+          duplicated the keyframes again the animation worked as expected. Also note that if you need more frames for the animation 
+          go to the Properties Panel and adjust the number that represents the end frame number.
+        </p>
+        <p>
+          After looking at the plant the robot should look at the viewer and break the 4th wall. Here I wanted to have the robot 
+          look sad or confused by rotating the eyes a bit down. After that the robot should just drive out of the scene. The whole 
+          process basically is always the same. Sometimes you have to adjust some keyframes because you forgot to select the according 
+          bones or suddenly you move a bone that you didn't keyframe before so the animation does not begin where you expect it to. 
+          Now that we defined the first scene, we want to have the next scene where the robot is suddenly big.
+        </p>
+        <p>
+          Basically you could now appruply translate the robot to the new position and keyframe it because it is outside of the 
+          camera view. For no reason whatsover I decided to have a realistic turn around a driving sequence here.
+        </p>
+        <p>
+          After having the robot at the starting point of the next scene, we want it to drive into the view of the camera, stop, 
+          look at the plant again, then to the viewer and then we try to let the robot communicate that its happy or amused. This 
+          is almost the same process as before so you may want to try it yourself. For the amused animation at the end I tried to do 
+          something like a wink with the eyes by moving them down and the up in a quick manner. This then marks the end of the 
+          animation. For the rest I just added the moving parts of the wheel. For the wheels itself I used a -360 degree rotation 
+          from start to stop for all two scenes. I repeated that on the other side. Then for the wheel track we have to go into the 
+          object mode when editing because we have not defined a bone. The animation will use our modifiers that are still defined 
+          in the object. We can just move the wheel track along the bezier circle we defined and it will look like it is rotating in 
+          a circle while we actually move the position of the track along one axis. Like before we define the keyframes after moving. 
+          Just try to match the start and stop points of the robot moving.
+        </p>
+        <p>
+          When happy with the animation we only have to adjust our output format, here choosing FFmpeg Video, defining a folder to 
+          save the video and depending on how long you want to wait for the result, you may want to turn down the amount of render 
+          iterations. Then just use the menu on top to render the animation and wait until Blender is finished.
+        </p>
+        <p>Here you can see the final result.</p>
+        <p>Thank you for your participation.</p>
+        <p>This concludes the blender tutorial.</p>
+      </app-collapse-component>
+    </div>
     <div class="quiz">
       <app-quiz-component question="For some reason one arm is left behind when moving the main bone. What can be wrong here?" 
         correctAnswer="The bones were not parented correctly" [answers]="['The bones were not parented correctly','Scale is not applied',
