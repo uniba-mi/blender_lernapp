@@ -18,7 +18,7 @@
       <h5>Please grab the material needed for this section <a href="./assets/files/reference_material.zip" target="_blank" download="reference_materials.zip">here</a></h5>
     </div>
     <div class="vdiv">
-      <app-xml-video-component videoname="Video_4_Body.mp4"></app-xml-video-component>
+      <app-basic-video-component videoname="Video_4_Body.mp4"></app-basic-video-component>
     </div>
     <div class="collapsible-component">
       <app-collapse-component message="I want to read" qId="ID1">
@@ -217,10 +217,6 @@
       </app-collapse-component>
     </div>
     <div class="quiz">
-      <!-- Change the answers -->
-      <app-quiz-component question="For some reason you cannot see your reference material when you rotate around your object. What can be the cause?" 
-        correctAnswer="The image was added as background" [answers]="['The image was not added as background','The image was added as background',
-        'The files is missing on your computer']" qId="ID1"></app-quiz-component>
       <app-quiz-component question="Can an object have multiple materials applied to it?" 
         correctAnswer="Yes" [answers]="['No','Depends on the object',
         'Yes']" qId="ID1"></app-quiz-component>

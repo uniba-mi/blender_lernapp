@@ -200,6 +200,9 @@ img {
 video {
   width: 100%;
 }
+video.overview {
+  width: 60%;
+}
 
 .hidden {
   display: none !important;

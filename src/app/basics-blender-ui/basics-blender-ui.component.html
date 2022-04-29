@@ -130,13 +130,17 @@
       </app-collapse-component>
     </div>
     <div class="quiz">
-      <app-quiz-component question="In this section I mentioned a first shortcut. Can you remember how to toggle fullscreen on a specific area?" 
-        correctAnswer="Ctrl + Spacebar" [answers]="['Ctrl + Spacebar','Spacebar','Alt + Spacebar']" qId="ID1"></app-quiz-component>
+      <app-quiz-component question="Can you remember how to toggle fullscreen on a specific area?" 
+        correctAnswer="Ctrl + Spacebar" [answers]="['Ctrl + Spacebar','Spacebar','Alt + Spacebar']" qId="QID1"></app-quiz-component>
+      <app-quiz-component question="At what position will objects you add in be created?" 
+        correctAnswer="At the 3D cursor" [answers]="['At the current mouse cursor position','At the 3D cursor',
+        'At a random position within space and time']" qId="QID2"></app-quiz-component>
     </div>
     <h3 id="toc_further_references">Further references</h3>
     <div class="ui warning message">
         <ul>
           <li><a href="https://docs.blender.org/manual/en/latest/" target="_blank">Official Manual for User Interface</a></li>
+          <li><a href="https://github.com/nutti/Screencast-Keys" target="_blank">Screencast-Keys Plugin</a></li>
         </ul>
     </div>
 </div>

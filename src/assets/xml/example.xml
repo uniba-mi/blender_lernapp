@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<keystrokes>
+    <keystroke><time>20</time><key>Shift + A</key><info>Add object.</info></keystroke>
+    <keystroke><time>23</time><key>S</key><info>Scale.</info></keystroke>
+    <keystroke><time>29</time><key>A</key><info>(De)Select all objects.</info></keystroke>
+    <keystroke><time>29</time><key>S</key><info>Scale.</info></keystroke>
+    <keystroke><time>29</time><key>I</key><info>Inset face.</info></keystroke>
+    <keystroke><time>30</time><key>A</key><info>(De)Select all objects.</info></keystroke>
+    <keystroke><time>30</time><key>S</key><info>Scale.</info></keystroke>
+    <keystroke><time>30</time><key>I</key><info>Inset face.</info></keystroke>
+</keystrokes>
