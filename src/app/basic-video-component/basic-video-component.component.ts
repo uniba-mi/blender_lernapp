@@ -22,7 +22,7 @@ export class BasicVideoComponentComponent implements OnInit {
 
   ngOnInit() {
     /* this path currently loads from a server hosted by the minf group, change this to local path for development */
-    this.video_assets_folder = "http://www.minf.uni-bamberg.de/recordings/ws2020/Blender/";
+    this.video_assets_folder = "http://www.minf.uni-bamberg.de/recordings/ss2022/Blender/";
     this.videopath = this.video_assets_folder + this.videoname;
   }
 

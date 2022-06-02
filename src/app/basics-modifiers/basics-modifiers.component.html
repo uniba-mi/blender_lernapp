@@ -1,0 +1,101 @@
+<h2 id="headline">Basic Modifiers</h2>
+<div id="start_content">
+    <div class="ui info message">
+        <h5>In this section you will learn:</h5>
+        <ul>
+          <li>What modifiers are</li>
+          <li>How to use the following modifiers: Array, Boolean, Mirror, Screw, Curve</li>
+        </ul>
+      </div>
+    <div class="vdiv">
+        <app-basic-video-component videoname="Video_3_Modifiers.mp4"></app-basic-video-component>
+    </div>
+    <div class="collapsible-component">
+      <app-collapse-component message="I want to read" qId="ID1">
+        <p>Welcome to this session.</p>
+        <p>
+          Last time we started a family of figures. Today we are going to finish it. We will learn what modifiers are and how to use them.
+        </p>
+        <p>
+          This time we will work again in the Object Mode. Before we start we will create five new standard cube figures by copying them. 
+          Then we make all but the one figure we are currently working on invisible. To find the modifiers you have to select an object 
+          and find the modifier properties in the properties panel. One useful thing about modifiers is, that you do not have to apply 
+          them directly, but you can play around with them while modelling in a non-destructive way on an object.
+        </p>
+        <p><u>Array Modifier:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/array.html">here</a>)</p>
+        <p>
+          We start with the Array Modifier. This one helps you to create an array or many of a kind of one object. For this one we create 
+          a new cube, make it very small and and thin and tall. Then we add the modifier and add a high count like 15 or 20. Then we change 
+          the relative offset to the Y axis. Add another array modifier and do the same thing but to the X axis. To finish this figure, 
+          apply the modifiers and join all objects together.
+        </p>
+        <p><u>Boolean Modifier:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/booleans.html">here</a>)</p>
+        <p>
+          The boolean modifier is suprisingly related to boolean operations. In the context of Blender this means we can use intersection, 
+          union and difference between two objects. Similar to boolean operations on sets. To subtract a cylinder from the cube figure 
+          and thereby make a whole. Move the cylinder on the cube in whatever position you want. Watch out that you only intersect with 
+          the cube and not also the arms or legs. Then add the modifier to the cube figure and select the cylinder within the boolean 
+          modifier choosing difference. Click apply and delete the cylinder to finish it.
+        </p>
+        <p><u>Mirror Modifier:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/mirror.html">here</a>)</p>
+        <p>
+          For the Mirror Modifier we want to create a pair of shoes for the figure. For that we create a new cube and scale it to a 
+          reasonable shoe size. For now we only have one shoes, but want to add another one on the other side. In this cas we can use 
+          the Mirror to mirror it on the other side. The best usage of the modifier is to additional add a custom empty axis that we use 
+          for mirroring, we call it Shoe Mirror. When we add the Mirror Modifier to the shoe we can select the Shoe Mirror and adjust the 
+          axis parameter to the Y axis. Now a new shoe appears in the right position. if you want to beautify it, you can add a Bevel 
+          modifier on top and adjust the settings. This modifier works similar to the Bevel tool, just on the whole object. So all 
+          corners are rounded. To finish this figure apply both modifiers and join the objects after that. 
+        </p>
+        <p><u>Screw Modifier:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/screw.html">here</a>)</p>
+        <p>
+          For this figure we want to create a swim ring. The most easy way to do this is to build a body out of rotation. The modifier 
+          we are going to use is called the Screw Modifier. First add a circle to the scene, turn it 90 degrees and scale it a bit down. 
+          Similar to the mirror modifier we need an origin point where we want to rotate the object around. Therefore we create an empty 
+          axis. Now we add the Screw modifier to the circle. See that a sphere will ermege since the object is currently still in the 
+          center. If we now move the circle away from it we will see the ring appear. We can now scale it to the right size, move its 
+          to the wanted position and apply the modifier.
+        </p>
+        <p><u>Curve Modifier:</u></p>
+        <p>(See manual: <a href="https://docs.blender.org/manual/en/latest/modeling/modifiers/deform/curve.html">here</a>)</p>
+        <p>
+          The last figure we are going to create wants to have a tail. Therefore we want to use the Curve Modifier where we can model 
+          something with a curve. First of all let's create a Bezier Curve. It's important that we set the origin of the local axis to 
+          the start. To do this, we move it along an axis until, the start of the curve is at the center of the world. Now we can use 
+          the 3D Cursor there to adjust the origin. Just right right click and use the option "Origin to 3D cursor". Now we can begin 
+          modelling our tail in whatever position we want it. Let's first move it along to a good position and the we go into the Edit 
+          Mode to adjust the Curve points and handles. If we want to add a point we can use Extrude or the shortcut <strong>E</strong>. 
+          Use the orthographic views to make it more easy to follow and model the way of the curve. If you are happy with the tail, 
+          we go into the second part of this. Add a cylinder and scale it down, now place it on the start of the curve. Now we have to 
+          add two modifiers. First add the array modifier and adjust it accordingly so that we have a long line. Now we can add the curve 
+          modifier and add our defined curve. We should now be able to move our tail along the curve. If we want to finish our model, 
+          just apply both modifiers and join the figure together.
+        </p>
+        <p>
+          Now we have seen all of the relevant basic tools and modifiers we are going to need for future sessions. Also we have completed 
+          our family of cube figures.
+        </p>
+        <p>
+          <u>Task:</u> If you want an extra challenge: Try to create the most interesting hat for our first figure using every modifier we 
+          learned in this session.
+        </p>
+        <p>Thank you for your participation</p>
+        <p>This concludes the tutorial for this session.</p>
+      </app-collapse-component>
+    </div>
+    <div class="quiz">
+        <app-quiz-component question="What is the main purpose of the edit mode?" 
+          correctAnswer="To modify an objects mesh data" [answers]="['To edit the color of objects','To modify an objects mesh data',
+          'To animate an object']" qId="ID1"></app-quiz-component>
+    </div>
+    <h3 id="toc_further_references">Further references</h3>
+    <div class="ui warning message">
+        <ul>
+          <li><a href="https://docs.blender.org/manual/en/latest/editors/3dview/modes.html" target="_blank">Additional documentation on object modes</a></li>
+        </ul>
+    </div>
+</div>

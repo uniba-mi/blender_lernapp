@@ -14,14 +14,10 @@ export class AppComponent implements OnInit {
   hideBackButton: Boolean = false;
   hideNextButton: Boolean = false;
 
-  public routerLinks = ["/home", "/required-tools", "/about-elearning", "/first-startup", "/blender-ui", "/viewport", "/t-coordinate-system",
-                        "/edit-mode", "/first-scene", "/modelling-chapter-overview", "/adding-reference-material", "/blocking-out", 
-                        "/shaping-up-one", "/shaping-up-two", "/t-modifiers", "/adding-wheels", "/t-mat-tex", "/adding-materials", 
-                        "/adding-black-parts", "/cutting-doors", "/adding-details", "/adding-ladders", "/t-curves", "/using-curves", 
-                        "/adding-textures", "/adding-extinguisher", "/adding-windows", "/adding-stairs-front", "/adding-lights", 
-                        "/adding-top-light", "/finishing-model", "/rendering", "/animation-chapter-overview", "/creating-robot-part-one", 
-                        "/creating-robot-part-two", "/creating-rocket", "/finish-robot", "/importing-objects", "/t-rigging", "/creating-rig", 
-                        "/parenting-rig", "/restricting-bones", "/setup-scene", "/animate-robot", "/animate-rocket", "/animate-rotator", "/conclusion"];
+  public routerLinks = ["/welcome", "/required-tools", "/about-elearning", "/blender-ui", "/basic-tools", "/basic-modifiers",
+                        "/modelling-chapter-overview", "/model-body", "/model-wheels", "/model-head", 
+                        "/model-arms", "/model-plant", "/coloring-and-rendering", "/animation-chapter-overview", "/rigging-and-animation", 
+                        "/theory-coordinate-system", "/theory-curves", "/theory-mat-tex", "/theory-modifiers", "/theory-rigging", "/conclusion"];
 
   public routerLink: string;
 

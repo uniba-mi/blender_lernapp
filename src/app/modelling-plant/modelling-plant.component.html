@@ -1,0 +1,116 @@
+<h2 id="headline">Vase and Plant</h2>
+<div id="start_content">
+    <div class="ui info message">
+      <h5>In this section you will learn:</h5>
+      <ul>
+        <li>What Proportional Editing is and how to use it</li>
+        <li>How to use the screw modifier in a complex model</li>
+        <li>How to combine the screw and array modifier to create complex shapes</li>
+        <li>How to use the subdivision surface modifier and what it does</li>
+      </ul>
+    </div>
+    <div class="ui warning message">
+      <ul>
+        <li>Idea and execution of the plant model adapted from: <a href="https://www.youtube.com/watch?v=JoW1XWi4Lw0" target="_blank">Blender 2.8 modular plant creation with modifiers</a></li>
+      </ul>
+    </div>
+    <div class="vdiv">
+      <app-basic-video-component videoname="Video_8_Plant.mp4"></app-basic-video-component>
+    </div>
+    <div class="collapsible-component">
+      <app-collapse-component message="I want to read" qId="ID1">
+        <p>Welcome to this session.</p>
+        <p>
+          Today we are going to create a plant for our project, consisting of a vase and the plant part. Let's start by making our robot 
+          invisible and adding a new collection. Then we can build everything in the center.
+        </p>
+        <p>
+          To create the vase, we are adding a new bezier curve which is going to be the outer contur of the object. Rotate the curve by 90 
+          degree than go into the orthographic side view. We will use a new modifier today which is called the Screw Modifier. You can 
+          build a rotation object with it by rotating the curve around a center point for which I created a new empty axis called 
+          "Plant_Origin". Set the axis in the Modifier to Z and you can see that half the work is almost done for the vase. Just choose a 
+          form which you would like to have. I try to re-do the reference vase here. Instead of applying the modifier we have to convert 
+          it to a mesh which will automatically apply it. Now you just have to add a bottom face to our object by selecting the bottom 
+          edges and pressing <strong>F</strong>. To finalize the vase, use the solidify Modifier on the object to create a more realistic 
+          thickness to the current 2D mesh, you may also add a subdivision surface modifier to make our object more round. Applying all 
+          modifiers we are almost done here. I additionally add a circle, and use the Screw Modifier again to create the detail from the 
+          reference, you may just duplicate the ring then, apply all modifiers and join the objects together.
+        </p>
+        <p>
+          I created a new color for the orange-brownish vase. Then select one circular edge from the inside of the vase by using 
+          <strong>ALT</strong> select again and create a new face there. This is supposed to be the dirt for the plant, so we create a 
+          new dirt color and assign it on there. Don't worry about the coloring too much, we will re-define the colors in the next 
+          session. For now the vase is done.
+        </p>
+        <p>
+          Now we can concentrate on the plant. Specifically we will start by adding a circle which we will use to create a model for 
+          the leaves. For this we go into the orthographic top view. For the first time we are now using proportional editing. To 
+          activate this, use the last menu option from the top center, we want to use "Sharp" here. Then select only the front 
+          vertice of the leaf and move it to the side, you can see that there is a big circle around the point and that the points 
+          around the selected vertice are moving with it. You can adjust the impact of the editing by scrolling, which you can see by 
+          the size of the impact circle increasing or decreasing. We want to select the point at the back of the leaf now and adjusting 
+          it too, this time using a smaller impact. You can already see the leaf taking its shape.
+        </p>
+        <p>
+          For now we only have vertices and edges but are still missing a face. This time instead of just selecting all vertices and 
+          pressing <strong>F</strong>, we use <strong>CTRL + F</strong> which will give us the option to use "Grid fill", this will 
+          create a nicer mesh to work with. Then adjust the Span and Offset so that we have a line going through the middle of our object. 
+          For me it worked with 10 for the Span and 3 for the Offset. Next we want to use the Loop cut two times close to the middle 
+          line, later we will use them to indent the middle.
+        </p>
+        <p>
+          Then we want to create a stem for the leaf. To do this select the three points at the bottom of the leaf and extrude them a 
+          few times along the X-Axis. The last extrusion should be very short as it is suposed to be the connection to the big plant 
+          stem. We scale these points a bit, to create a fitting shape.
+        </p>
+        <p>
+          Now we are selecting the inner points of the leaf, you may use the brush selection with <strong>C</strong>, then use right 
+          click and the option "smooth vertices" and repeat this for 4 or 5 times, so that we have a better distribution of the points. 
+          As the leaf is still very flat and 2D right now we may want to change that. To do that we are going to select the point at 
+          the front and the points at the end, switching into the side view and turning proportional editing on again. If we now move 
+          the points down, we can see that it creates a curve shape for our object. I additionally adjusted the front point to be even more 
+          curved down. Then to get a more realistic shape we want to indent the middle part. So select the center lines up until the 
+          stem and then move them downwards. The rough shape for the leaf is now finished, we are just adding again the Solidify and 
+          Subsurface Modifier to finalize it. Apply both of them.
+        </p>
+        <p>
+          Now that the single leaf is done, we somehow want to use it to create all of the other ones with low effort. To prepare this, 
+          we want to first adjust the origin point of the leaf. Either by manually setting the origin point or going into the Edit Mode 
+          and moving the whole structure accordingly so that the stem ends at the origin.
+        </p>
+        <p>
+          For our next trick we want to add an empty sphere, scale it down and apply the scale again. This sphere is going to be our 
+          control object to create all the other leaves. Now you can select the leaf again and add an Array Modifier choosing a count 
+          like 20 or so. Than select the empty sphere as the object offset. If you now change the rotation, scale or position of the 
+          sphere object you can see how it will affect all of the leaves. Don't apply these modifiers before we have talked about the 
+          coloring in the next session. For now I make the objects invisible as we are just quickly creating a stem for the plant to 
+          define how high it will be. To do this I just added a cylinder, made it very small and scaled it quite high. Then I scaled 
+          the face at the top smaller so that it looks more like a plant stem. Later we want to bend it too. To make this easier for 
+          us, we are adding a few loop Cuts now with <strong>CTRL + R</strong>. Use the scroll feature to create many cuts here, in 
+          the end I created roughly 30. Then add a new Color for the plant, which i just called "Plant_Green".
+        </p>
+        <p>
+          Since the stem is done for now, we go back to the leaf. If we rotate the sphere enough you can quickly see that we already 
+          have quite a nice plant shape. You may want to scale it down too so that the upper leaves are smaller than the bottom ones.
+        </p>
+        <p>
+          One detail left to do, is to bend the plant a bit so that it looks more realistic and less stiff. To do that we are going to 
+          use the Curve modifier and therefore need a new Bezier Curve.
+        </p>
+        <p>
+          As before we have to adjust the origin point of the curve, for this you can go into Edit Mode and move the whole curve. I 
+          made a mistake here by choosing the wrong end of the curve which led to me defining the plant upside down and being a bit 
+          confused. In the end I had to change the origin point again to have the expected behavior. For now this should conclude the 
+          modelling. Next time we will texture the leaves of the plant and construct the plant as a whole object. Then we are also 
+          coloring our robot, lighting the scene and creating our first rendered picture.
+        </p>
+        <p>Thank you for your participation</p>
+        <p>This concludes the tutorial for this session.</p>
+      </app-collapse-component>
+    </div>
+    <div class="quiz">
+      <app-quiz-component question="You add in a mirror modifier but nothing seems to happen. What is a possible root cause?" 
+        correctAnswer="The object is mirrored along a symmetry axis" [answers]="['The object is mirrored along a symmetry axis','Modifiers must be applied before we can see them',
+        'Modifiers are only visible in rendered images']" qId="ID1"></app-quiz-component>
+  </div>
+</div>

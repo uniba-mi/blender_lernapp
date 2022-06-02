@@ -15,7 +15,7 @@ import { Component, ElementRef, OnInit, Input } from '@angular/core';
   @param answers[]: all possible answers that should be displayed containing the correct one
   @param qId: an ID to be able to find the question and evaluate
 */
-export class QuizComponentComponent implements OnInit {
+export class QuizComponent implements OnInit {
 
   @Input()
   question: string;

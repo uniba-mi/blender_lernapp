@@ -1,0 +1,139 @@
+<h2 id="headline">Wall-E Wheels</h2>
+<div id="start_content">
+    <div class="ui info message">
+      <h5>In this section you will learn:</h5>
+      <ul>
+        <li>How to quickly detail circular shapes with Inset, Extrude and Move</li>
+        <li>How to quickly create small objects (here: Legs) by using Extrude with Transformations</li>
+        <li>How to move the origin point within an object with the 3D cursor</li>
+        <li>How to use the curve modifier in a complex model</li>
+        <li>How to use the array modifier in a complex model</li>
+        <li>How to manually mirror objects by the global axis</li>
+        <li>How to combine the curve and array modifier to create complex shapes</li>
+      </ul>
+    </div>
+    <div class="comment">
+      <p class="ui red message">Small spoiler: I forgot to move the upper legs of the robot to its final position. As already said in the video
+        this will be fixed in a later video.
+      </p>
+    </div>
+    <div class="vdiv">
+      <app-basic-video-component videoname="Video_5_Wheels.mp4"></app-basic-video-component>
+    </div>
+    <div class="collapsible-component">
+      <app-collapse-component message="I want to read" qId="ID1">
+        <p>Welcome to this session.</p>
+        <p>
+          Today we are going to have a look at the Wheels part of our robot. Similar to the Body before, the structure looks more 
+          complicated than it really is. For the most part we are going to use basic shapes again and re-define them afterwards. For 
+          instance you may already see that the wheel track is made out of several cubes and the inner individual wheels are probably 
+          made out of cylinders.
+        </p>
+        <p>
+          This said we are going to start placing some cylinders in the exact locations of the circles ignoring the details for now. 
+          Again you can just rotate the cylinder by 90 degrees on the x-axis (either manually or typing it in) and then scale it down 
+          to cover our reference image. The rest of the cylinders can just be duplicated with <strong>SHIFT + D</strong> or 
+          <strong>CTRL + C</strong> and <strong>CTRL + V</strong> from the first one and scaled accordingly. Watch out that you only 
+          scale with the blue rectangle symbol, so that the local X and Y-coordinates are scaled but not the local Z-coordinates. 
+          Otherwise the cylinders will have different widths when looking from the front of the robot.
+        </p>
+        <p>
+          Now that the cylinders are defined, we are detailing them. For the wheels I have used two quite similar but different designs, 
+          you may also create your own if you want. Since we won't really look at the inside part of the wheel, we are just focusing on 
+          detailing one side. First select the outer face of the first cylinder and use the Inset tool with <strong>I</strong> to create 
+          two inner circles. Make the second one quite small. Then select all of the inner faces, remember that you can use the select 
+          brush with <strong>C</strong> to easily help you do that. With <strong>E</strong> we are extruding the faces inwards to create 
+          an indentation. Then we move the inner circle a bit outwards using <strong>G</strong> to move and <strong>Z</strong> to fix the 
+          axis. Then extrude the small circle a tiny bit. The first wheel is done and can be colored with the already defined Rust_Brown 
+          color. Repeat the same process for the next two wheels. You can also just duplicate the second one to create the third. For 
+          the last two wheels we are going to use a different design but the same methods again. Here I make sure that the larger wheel 
+          is behind the smaller one, so that we have some 3D variety.
+        </p>
+        <p>
+          For the next wheels which are also going to be the wheels that will be able to rotate later on, we create three inner circles 
+          with the Inset tool. The inner circle will be a bit larger this time. Extrude the first inner ring a bit, then repeat the 
+          process we used before for the inner faces by extruding them inwards and moving the inner part a bit outside along the local 
+          Z axis.
+        </p>
+        <p>
+          The only detail missing on the dynamic wheels now are the spikes. To create them we first create a new tiny cube and place it 
+          on top of the wheel. Then we are moving the upper inner points with X-Ray toggled on to the inside to create a sharp slope, 
+          repeat this for the side view too. Coloring it with Rust_Brown we almost are done already.
+        </p>
+        <p>
+          The easiest way of creating the spiked around the wheel is to use the Array Modifier we have seen before. But this time we 
+          want to move the array also around a curve, specifically a curve in the shape of a circle. To do this we first have to create 
+          a Bezier Circle, by adding it to the scene. Save yourself half an hour by choosing the correct object, we want the circle 
+          from the curve menu, not the 2D circle from the geometries. They are not the same.
+        </p>
+        <p>
+          When you aligned the Bezier Circle with the wheel you can go back to the Spike object and go to the modifier selection. Add 
+          the Array Modifier first, selecting roughly 16 as the count and then add the Curve Modifier. Here you have to select our 
+          Bezier Curve. Then you only have to adjust your settings and maybe move the spikes a bit to locate them to their final position. 
+          To make sure that your spikes are distributed equally one trick is to try to overlap the first and last spike and then toggling 
+          on the Merge-option so that they merge together.
+        </p>
+        <p>
+          Before applying the modifiers as we usually do, duplicate the two objects we just used to define the spike ring: The spike and 
+          the circle. Then move them to the other wheel where we also want to use this design. I also duplicated it again to have the 
+          spikes on the back half of the first wheel because that looked nicer. If you have placed all the objects accordingly, you 
+          can apply the modifiers. If you have done that, you may also want to delete the circles since we won't need them anymore. 
+          You can now also join the spike rings with their according wheel, but leave the spiked wheels as individual objects since we 
+          want to rotate them in the animation later. The static not-spiked wheels also can be joined together.
+        </p>
+        <p>
+          To finish the inner wheel part, we only have to connect the wheel parts so that they don't look like seperate objects. For this 
+          we can just use a cube and create some kind of rail. Here I just extruded both sides of a cube and than moved the outer 
+          points a bit to match the reference. Color the object acordingly to the wheels and combine the static wheel part.
+        </p>
+        <p>
+          Now we go to the front view and take care of what can be considered the legs of the robot. Therefore we Inset the face of the 
+          first cylinder facing inwards and then extruding the circle until the first edge. We extrude again until the next edge, this 
+          time we also scale the resulting circle smaller and move it up a bit, then we extrude it again to finish the first leg part.
+        </p>
+        <p>
+          The second part has to be a new object since we want to move them independently afterwards. We can start with a cylinder again 
+          for this one and then just extrude and scale the circle again. Here I missed to move the second leg part to the front on top 
+          of the other one, so that they connect to each other. I will notice this later on.
+        </p>
+        <p>
+          Only thing missing now is the Wheel track that is going to move around the whole thing. To create the first track part I want 
+          to use the Mirror modifier. For this reason I make the rest of the scene invisible so that I can work in the center of the world. 
+          First I create another cube and scale it roughly in the form that the tracks should have: rectangular with a small depth. Then I 
+          am using the mirror modifier from the start to model the object. So I don't have to draw the pattern I am going to use twice. 
+          I want to create something like a W-looking shape for the pattern with indentations on the side. To create the lines I am going 
+          to use Loop-Cuts and for the finer details and non-straight lines the Knife tool. First we want to create an indentation on the 
+          end of the face. After creating two lines use the Extrude tool to indent inwards, toggling "dissolving orthogonal edges" again 
+          to clear unwanted fragments. Then we use four straight vertical lines, two  diagonal lines and two straight lines to cut out 
+          a symbol roughly looking like a wheel track pattern. Then select the pattern and extrude it outwards a bit. Apply the modifier, 
+          add the Rust_brown color and the wheel track part is done. Now we only have to duplicate it around the inner wheel mechanism.
+        </p>
+        <p>
+          For this we are going to use the same trick as we did before with the spikes and the wheel. You may want to pause the video now 
+          and try it for yourself to test your learned skills. We will proceed in a second.
+        </p>
+        <p>
+          As before we create a Bezier Circle and move it roughly around the inner wheel parts. The only difference to before is that now 
+          we have to adjust the curve to fit  our reference. Go into the Edit mode and try to adjust the points of the curve along with 
+          the according control points. You may want to subdivide some of the lines to get another point to work with.
+        </p>
+        <p>
+          When you are happy with your curve, you can go into the modifier menu of the track part and add the Array and the Curve Modifier. 
+          In the end I used roughly 20 parts with a very tiny offset just over 1. This time we don't want to apply the modifiers since we 
+          need them to turn our wheeltrack. You can try it now for yourself: By moving the track along the X-axis the wheeltrack is 
+          rotating around the curve achieving the effect we want. 
+        </p>
+        <p>
+          One side is finished now. At this point make sure to properly name all of the objects, I added "Right" at the end of the name, 
+          to make the seperation clear for later.  Here we could use the mirror modifier again for every object, but then we would have to 
+          manually seperate each object again if we want to seperate the Left and the Right side. Another option, the one I choose, is to 
+          select all the objects that have to be mirrored, duplicate them and then mirror them directly on the global axis. Clicking with 
+          the right mouse button and choosing Mirror: Global Y-Axis, then just move them to their correct position. In the end make sure 
+          to name everything properly and use collections to order your project to have a good overview. As you can see the wheels are 
+          now done. Next time we will prepare the Head of the Wall-e robot.
+        </p>
+        <p>Thank you for your participation.</p>
+        <p>This concludes the tutorial for this session.</p>
+      </app-collapse-component>
+    </div>
+</div>

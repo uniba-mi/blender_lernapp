@@ -1,4 +1,4 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 
 .bold {
     font-weight: bolder;
@@ -200,6 +200,9 @@ img {
 video {
   width: 100%;
 }
+video.overview {
+  width: 60%;
+}
 
 .hidden {
   display: none !important;
@@ -249,4 +252,37 @@ div.tableContainer thead tr {
 #menu_item {
   margin: 0 !important;
   padding: 0 !important;
+}
+
+/* -- Design from https://www.w3schools.com/howto/howto_js_collapsible.asp -- */
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapsible-content {
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.hidden{
+  display: none;
 }

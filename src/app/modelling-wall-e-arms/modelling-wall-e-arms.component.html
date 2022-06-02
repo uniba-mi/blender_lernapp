@@ -1,0 +1,91 @@
+<h2 id="headline">Wall-E Arms</h2>
+<div id="start_content">
+    <div class="ui info message">
+      <h5>In this section you will learn:</h5>
+      <ul>
+        <li>How to create complex custom shapes</li>
+      </ul>
+    </div>
+    <div class="vdiv">
+      <app-basic-video-component videoname="Video_7_Arms.mp4"></app-basic-video-component>
+    </div>
+    <div class="collapsible-component">
+      <app-collapse-component message="I want to read" qId="ID1">
+        <p>Welcome to this session.</p>
+        <p>
+          Today we are going to finish the model of the robot and build some arms and hands. Let's start by going into the side view 
+          and creating some kind of rectangular connecting piece, which is supossed to follow the track path of the Body. So we place 
+          it in there. Then we are going to add a cylinder which will connect to it. You may place it back to the center of the world 
+          if you want to quickly detail it and then mirror it to the other side. If you are done with the circulare faces, place it back 
+          to the final position. Then add two cuts around the object with the Loop Cut tool or the shortcut <strong>CTRL + R</strong>. 
+          Similar to the technique used with the binoculars detail, we can select the faces around the cylinder with <strong>ALT</strong> 
+          and left mouse click and then scale it outwards. Since we are scaling in every direction here, I adjusted the form after 
+          that by scaling on the Z-axis, so that we don't have a concave shape here. Then just color the faces accordingly yellow 
+          and in the metal color.
+        </p>
+        <p>
+          Next we are adding the rectangular arm which is just a long-sided cube with some details drawn on one side. I tried to match 
+          roughly the size of the metal plate behind it here. After done positioning the cube, just add some lines with the knife tool, 
+          making sure just to select and cut on the outer side of the arm. Then we want to color it alternating between a white and black 
+          color. Before adding the metal pole connecting to the hand of the robot I add another little circular ring that I bevel, this 
+          time even with the bevel modifier. This just makes the look more realistic. Then as mentioned before we add a cylindric pole 
+          connecting to the arm and having the standard rust Metal color. For the detail ring before I used the dark metal color to have 
+          some variance in there. Also to differentiate a bit here, I want to use a metal and rusty metal color for the hand, using the 
+          rust parts for the connecting cylindric parts and the metal parts for the finger parts. For the cylinder parts here you can 
+          just use duplication and then readjust the objects a bit. Basically we will have two fingers in the front and one thumb-like 
+          finger in the back. To simplify our robot I assumed that the robot can only move his front fingers together as one, so we don't 
+          have too much independent objects in the end. Also we differentiate between an upper and lower part of the fingers. 
+        </p>
+        <p>
+          If you are done preparing the cylinders, we are going to have to create a few a little bit more complicated finger parts before 
+          we are finally done. At this point if the rotation of the reference picture is confusing you too much, you can always just 
+          rotate it to match your current work again.
+        </p>
+        <p>
+          First we start with the connecting piece at the back of the hand. For this we start by adding a cube and scaling it to our needs. 
+          I oriented myself here by looking at the cylinder which will end up being somewhere in the center of our new object. 
+          After positioning we just select two of the outer edges and bevel them so that we have an almost similar shape to the reference. 
+          For detailing purposes we are now going to cut out a piece from the middle of the object, so that the cylinder can be seen 
+          fully. Here I just extruded the inner face a bit because I realised I need more space. When you are happy with your positioning 
+          of your connector object and the cut-out object, you can use the Boolean Modifier on the connector object, choosing difference 
+          and applying the cut. You may delete the cut-out object. I just made it invisible to use it again for the next few cut-outs we 
+          are going to need.
+        </p>
+        <p>
+          Basically we are going to repeat the process now for the rest of the parts, each having a bit of a different shape. For the 
+          first upper finger part: Adding a cube, scaling and positoning it. Here I used bevel to create some more vertices to create 
+          the appropriate form, you could also just use Extrude and scaling here which would probably be a bit easier. At the finger 
+          start again, we use bevel to round the corners accordingly to the reference. Then the last part is to cut out a tiny pice 
+          at the inner upper side. here I use again my cut-out cube which I rotated accordingly. After creating the first finger part, 
+          you can just mirror it to the other side. Then you may also already join the upper hand half to one object, as this all may 
+          move together in the end.
+        </p>
+        <p>
+          For the lower finger part we add again a cube and adjust the points. Then just mirror it again, and coloring it with the 
+          metal color. In the end you may just join the lower parts together too.
+        </p>
+        <p>
+          The only thing left now, is the thumb part in the back. As we are going to repeat the same process, you can try to test your 
+          skills practically and stop the video for now. We will proceed in a second.
+        </p>
+        <p>
+          For the thumb, you can just duplicate the lower part of the finger as this is practically identical. Then for the upper half, 
+          we have to assume a fitting shape. I decided to make it even simpler than the front ones by sticking to the four vertices and 
+          then bevel the upper half accordingly. In the end we have to repeat a similar cut-out as before but on the outer sides of the 
+          object. You may add the cut-out in the boolean modifier and make it invisible so that you can see how the cut-out would look 
+          without having it applied yet. If you are satisfied apply the modifiers, join all parts that should move togther together and 
+          then proceed by naming your objects accordingly. The right arm is done now.
+        </p>
+        <p>
+          Then we are selecting all of the objects and duplicating them to the left side, mirroring it again by the Y axis. Then clean 
+          your project by naming and structuring it again. 
+        </p>
+        <p>
+          A last look and see, we have finished the Wall-e model. Next time we create the plant standing next to the robot and then we 
+          can start texturing in the session after that.
+        </p>
+        <p>Thank you for your participation</p>
+        <p>This concludes the tutorial for this session.</p>
+      </app-collapse-component>
+    </div>
+</div>
