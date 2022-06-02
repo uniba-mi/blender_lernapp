@@ -28,7 +28,7 @@ export class XmlVideoComponentComponent implements OnInit {
 
   ngOnInit() {
     /* this is a server maintained by minf group, change to local path for development */
-    this.video_assets_folder = "http://www.minf.uni-bamberg.de/recordings/ws2020/Blender/Update_2022/";
+    this.video_assets_folder = "http://www.minf.uni-bamberg.de/recordings/ss2022/Blender/";
     this.videopath = this.video_assets_folder + this.videoname;
     /* currently set to a local path containing the xml files */
     this.xml_assets_folder = "assets/xml/";
